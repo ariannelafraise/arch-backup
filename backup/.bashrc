@@ -17,8 +17,15 @@ alias backup-config='./personal_dev/arch-backup/arch_backup.sh'
 eval $(ssh-agent) &> /dev/null
 ssh-add ~/ssh_keys/github_id_rsa &> /dev/null
 
+# ANSI Color Variables
+RESET="\[\033[0m\]"
+# 256-color mode
+CYAN="\[\033[38;5;117m\]"
+PINK="\[\033[38;5;213m\]"
+WHITE="\[\033[38;5;231m\]"
+LIGHT_PINK="\[\033[38;5;217m\]"
 # Prompt (colored)
-PS1='  { \[\033[38;5;117m\]\u\[\033[0m\]@\[\033[38;5;213m\]\h\[\033[0m\] \[\033[38;5;231m\] \w\[\033[0m\] } \[\033[38;5;217m\]\[\033[0m\]  '
+PS1='  { '"$CYAN"'\u'"$RESET"'@'"$PINK"'\h'"$RESET"' '"$WHITE"' \w'"$RESET"' } '"$LIGHT_PINK"''"$RESET"'  '
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
