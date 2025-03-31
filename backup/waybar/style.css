@@ -1,7 +1,8 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: 'Adwaita Sans';
-    font-size: 16px;
+    font-family: 'Ubuntu Mono Nerd Font';
+    font-size: 18px;
+    font-weight: 600;
 }
 
 window#waybar {
@@ -19,7 +20,8 @@ window#waybar {
 #tray,
 #workspaces,
 #window,
-#custom-flag
+#custom-flag,
+#custom-hrt
 {
     background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
@@ -77,8 +79,11 @@ window#waybar {
     margin-right: 10px;
 }
 
-#workspaces {
+.modules-left {
     margin-left: 10px;
+}
+
+#workspaces {
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -86,6 +91,5 @@ window#waybar {
 tooltip {
     background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
-    padding: 100px;
     border: none;
 }

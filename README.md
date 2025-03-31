@@ -1,1 +1,1 @@
-Backup of my Arch Linux configuration files !
+Backup of my Arch Linux configuration files!

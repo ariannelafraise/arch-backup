@@ -5,9 +5,7 @@
     "margin": 0,
   
     "modules-left": [
-      "hyprland/workspaces",
-      "hyprland/window",
-      "custom/flag"
+      "hyprland/workspaces"
     ],
   
     "modules-center": [
@@ -15,20 +13,34 @@
     ],
   
     "modules-right": [
-      "custom/flag",
+      "custom/hrt",
       "network",
       "wireplumber",
       "clock",
       "tray"
     ],
 
-    "custom/flag": {
-      "format": "🏳️‍⚧️"
+    "custom/hrt": {
+      "format": "🏳️‍⚧️ {}",
+      "exec": "~/personal_dev/hrt-time/hrt-time.sh hours",
+      "interval": 60,
+      "tooltip": false
     },
   
     "clock": {
-      "format-alt": "{:%d/%m/%Y}",
-      "tooltip-format": "{calendar}"
+        	"format": "{:%H:%M}",
+        	"rotate": 0,
+        	"format-alt": "{:%d/%m/%Y}",
+        	"tooltip-format": "<tt>{calendar}</tt>",
+        	"calendar": {
+            		"mode": "month",
+            		"format": {
+                	    "months": "<span color='#fc58b2'><b>{}</b></span>",
+                        "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                	    "weekdays": "<span color='#fc58b2'><b>{}</b></span>",
+                	    "today": "<span color='#f458fc'><b>{}</b></span>"
+            	}
+            }
     },
   
     "tray": {
