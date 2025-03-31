@@ -27,7 +27,7 @@ echo -e "${YELLOW}Backup files are stored in the '~/personal_dev/arch-backup/bac
 echo -e "${PINK}${GITHUB_ICON} Pushing to GitHub...${RESET}\n"
 
 git -C ~/personal_dev/arch-backup add .
-git -C ~/personal_dev/arch-backup commit -m "$(date +"%Y-%m-%d %H:%M:%S") Backup"
+git -C ~/personal_dev/arch-backup commit -m "$(date +"%Y-%m-%d %H:%M:%S")"
 if [ $? -ne 0 ]; then
     echo -e "\n${RED}Error: Commit failed!${RESET}"
     exit 1
