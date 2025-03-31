@@ -11,6 +11,7 @@ export HISTSIZE=100000
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias backup-config='./personal_dev/arch-backup/arch_backup.sh'
 
 # SSH
 eval $(ssh-agent) &> /dev/null
