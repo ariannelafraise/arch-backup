@@ -28,7 +28,7 @@ cp -r ~/.config/dunst $script_dir/backup/dunst/
 cp -r ~/.config/oh-my-posh $script_dir/backup/oh-my-posh/
 
 echo -e "${GREEN}${DONE_ICON} Backup completed!${RESET}"
-echo -e "${YELLOW}Backup files are stored in the '$(script_dir)/backup' directory.${RESET}\n"
+echo -e "${YELLOW}Backup files are stored in the '${script_dir}/backup' directory.${RESET}\n"
 
 echo -e "${PINK}${GITHUB_ICON} Pushing to GitHub...${RESET}\n"
 
