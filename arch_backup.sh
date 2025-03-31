@@ -16,10 +16,10 @@ DONE_ICON="󰾏 "    # Checkmark icon (Completed)
 echo -e "${BLUE}${BACKUP_ICON} Starting backup...${RESET}"
 
 cp ~/.bashrc ~/personal_dev/arch-backup/backup/.bashrc
-cp -r ~/.config/waybar ~/personal_dev/arch-backup/backup/waybar
-cp -r ~/.config/hypr ~/personal_dev/arch-backup/backup/hypr
-cp -r ~/.config/kitty ~/personal_dev/arch-backup/backup/kitty
-cp -r ~/.config/eww ~/personal_dev/arch-backup/backup/eww
+cp -r ~/.config/waybar ~/personal_dev/arch-backup/backup/waybar/
+cp -r ~/.config/hypr ~/personal_dev/arch-backup/backup/hypr/
+cp -r ~/.config/kitty ~/personal_dev/arch-backup/backup/kitty/
+cp -r ~/.config/eww ~/personal_dev/arch-backup/backup/eww/
 
 echo -e "${GREEN}${DONE_ICON} Backup completed!${RESET}"
 echo -e "${YELLOW}Backup files are stored in the '~/personal_dev/arch-backup/backup' directory.${RESET}\n"
