@@ -32,7 +32,6 @@ if [ $? -ne 0 ]; then
     echo -e "\n${RED}Error: Commit failed!${RESET}"
     exit 1
 fi
-echo -e "\n${GREEN}${DONE_ICON} Commit completed!${RESET}"
 git -C ~/personal_dev/arch-backup push -u origin main
 
 if [ $? -ne 0 ]; then
