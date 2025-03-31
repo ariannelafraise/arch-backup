@@ -1,24 +1,32 @@
 {
     "layer": "top",
-    "height": 44,
+    "height": 40,
     "spacing": 8,
     "margin": 0,
   
     "modules-left": [
-      "hyprland/workspaces"
+      "battery",
+      "clock",
+      "custom/hrt"
     ],
   
     "modules-center": [
-      "battery"
+      "hyprland/workspaces"
     ],
   
     "modules-right": [
-      "custom/hrt",
       "network",
       "wireplumber",
-      "clock",
       "tray"
     ],
+
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+        "default": "",
+        "active": ""
+      }
+    },
 
     "custom/hrt": {
       "format": "🏳️‍⚧️ {}",
@@ -28,7 +36,7 @@
     },
   
     "clock": {
-        	"format": "{:%H:%M}",
+        	"format": "  {:%H:%M}",
         	"rotate": 0,
         	"format-alt": "{:%d/%m/%Y}",
         	"tooltip-format": "<tt>{calendar}</tt>",
@@ -52,25 +60,25 @@
         "warning": 30,
         "critical": 15
       },
-      "format": "󰁹  {capacity}%",
+      "format": "󰁹 {capacity}%",
       "format-full": "󱈏  {capacity}%",
-      "format-charging": "󰂄  {capacity}%",
-      "format-plugged": "󰂄  {capacity}%",
-      "format-alt": "󰁹  {time}"
+      "format-charging": "󰂄 {capacity}%",
+      "format-plugged": "󰂄 {capacity}%",
+      "format-alt": "󰁹 {time}"
     },
   
     "network": {
-      "format-wifi": "󰤨   {essid} ({signalStrength}%)",
-      "format-ethernet": "󰁹   {ipaddr}/{cidr}",
-      "tooltip-format": "󰤨   {ifname} via {gwaddr}",
-      "format-linked": "󰤨   {ifname} (No IP)",
-      "format-disconnected": "󰤭   disconnected",
-      "format-alt": "󰤨   {ifname}: {ipaddr}/{cidr}"
+      "format-wifi": "󰤨  {essid} ({signalStrength}%)",
+      "format-ethernet": "󰁹 {ipaddr}/{cidr}",
+      "tooltip-format": "󰤨  {ifname} via {gwaddr}",
+      "format-linked": "󰤨  {ifname} (No IP)",
+      "format-disconnected": "󰤭  disconnected",
+      "format-alt": "󰤨  {ifname}: {ipaddr}/{cidr}"
     },
   
     "wireplumber": {
-      "format": "    {volume}%",
-      "format-muted": "    {volume}%"
+      "format": "  {volume}%",
+      "format-muted": "  {volume}%"
     },
   
     "cpu": {

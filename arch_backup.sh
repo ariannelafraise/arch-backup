@@ -1,5 +1,7 @@
 #!/bin/bash
 
+script_dir=$(pwd)
+
 # Pastel colors
 GREEN="\e[38;5;150m"  # Light pastel green
 BLUE="\e[38;5;147m"   # Light pastel blue
@@ -15,19 +17,22 @@ DONE_ICON="󰾏 "    # Checkmark icon (Completed)
 
 echo -e "${BLUE}${BACKUP_ICON} Starting backup...${RESET}"
 
-cp ~/.bashrc ~/personal_dev/arch-backup/backup/.bashrc
-cp -r ~/.config/waybar ~/personal_dev/arch-backup/backup/waybar/
-cp -r ~/.config/hypr ~/personal_dev/arch-backup/backup/hypr/
-cp -r ~/.config/kitty ~/personal_dev/arch-backup/backup/kitty/
-cp -r ~/.config/eww ~/personal_dev/arch-backup/backup/eww/
+cp ~/.bashrc $script_dir/backup/bash/.bashrc
+cp -r ~/.config/waybar $script_dir/backup/waybar/
+cp -r ~/.config/hypr $script_dir/backup/hypr/
+cp -r ~/.config/kitty $script_dir/backup/kitty/
+cp -r ~/.config/eww $script_dir/backup/eww/
+cp -r ~/.config/wofi $script_dir/backup/wofi/
+cp -r ~/.config/dunst $script_dir/backup/dunst/
+cp -r ~/.config/oh-my-posh $script_dir/backup/oh-my-posh/
 
 echo -e "${GREEN}${DONE_ICON} Backup completed!${RESET}"
-echo -e "${YELLOW}Backup files are stored in the '~/personal_dev/arch-backup/backup' directory.${RESET}\n"
+echo -e "${YELLOW}Backup files are stored in the '$(script_dir)/backup' directory.${RESET}\n"
 
 echo -e "${PINK}${GITHUB_ICON} Pushing to GitHub...${RESET}\n"
 
-git -C ~/personal_dev/arch-backup add .
-git -C ~/personal_dev/arch-backup commit -m "$(date +"%Y-%m-%d %H:%M:%S")"
+git -C $script_dir add .
+git -C $script_dir commit -m "$(date +"%Y-%m-%d %H:%M:%S")"
 if [ $? -ne 0 ]; then
     echo -e "\n${RED}Error: Commit failed!${RESET}"
     exit 1
