@@ -13,6 +13,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias backup-config='~/personal_dev/arch-backup/arch_backup.sh'
 alias wireshark='XDG_CURRENT_DESKTOP=GNOME wireshark'
+alias macfetch='hyfetch --distro macaroni'
+alias winfetch='hyfetch --distro windows'
 
 # SSH
 eval $(ssh-agent) &> /dev/null
@@ -27,6 +29,7 @@ ssh-add ~/ssh_keys/github_id_rsa &> /dev/null
 #LIGHT_PINK="\[\033[38;5;217m\]"
 # Prompt (colored)
 #PS1='  { '"$CYAN"'\u'"$RESET"'@'"$PINK"'\h'"$RESET"' '"$WHITE"' \w'"$RESET"' } '"$LIGHT_PINK"''"$RESET"'  '
+
 eval "$(oh-my-posh init bash --config .config/oh-my-posh/themes/M365Princess.omp.json)"
 eval "$(oh-my-posh init bash --config .config/oh-my-posh/themes/velvet.omp.json)"
 
