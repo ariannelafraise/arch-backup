@@ -10,7 +10,7 @@ window#waybar {
 }
 
 tooltip {
-    background-color: rgba(38, 11, 33, 0.7);
+    background-color: rgba(56, 21, 58, 0.6);
     border: none;
 }
 
@@ -23,7 +23,7 @@ tooltip {
 }
 
 .modules-left > * > *, .modules-center > * > *, .modules-right > * > * {
-    background-color: rgba(38, 11, 33, 0.7);
+    background-color: rgba(56, 21, 58, 0.6);
     padding: 0px 20px;
     border-radius: 20px;
 }
@@ -62,7 +62,7 @@ tooltip {
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: rgba(245, 60, 60, 0);
+    background-color: rgba(252, 106, 106, 0);
     animation-name: blink-red;
     animation-duration: 1s;
     animation-timing-function: steps(25);

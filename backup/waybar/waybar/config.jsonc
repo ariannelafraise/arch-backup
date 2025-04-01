@@ -6,7 +6,6 @@
   "position": "top",
 
   "modules-left": [
-    "custom/swaync",
     "clock",
     "battery",
     "custom/hrt"
@@ -20,7 +19,8 @@
     "cpu",
     "network",
     "wireplumber",
-    "tray"
+    "tray",
+    "custom/swaync"
   ],
 
   "custom/swaync": {
