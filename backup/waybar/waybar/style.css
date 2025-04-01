@@ -1,0 +1,74 @@
+* {
+    font-family: 'Ubuntu Mono Nerd Font';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background: none;
+    color: #ffffff;
+}
+
+tooltip {
+    background-color: rgba(38, 11, 33, 0.7);
+    border: none;
+}
+
+.modules-right {
+    margin-right: 10px;
+}
+
+.modules-left {
+    margin-left: 10px;
+}
+
+.modules-left > * > *, .modules-center > * > *, .modules-right > * > * {
+    background-color: rgba(38, 11, 33, 0.7);
+    padding: 0px 20px;
+    border-radius: 20px;
+}
+
+#workspaces {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#workspaces button {
+    padding: 5px 15px;
+    padding-right: 22px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+#workspaces button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#battery.charging, #battery.plugged {
+    border-radius: 100px;
+    border-left: 3px solid rgba(255, 255, 255, 1);
+    border-right: 3px solid rgba(255, 255, 255, 1);
+}
+
+@keyframes blink {
+    to {
+        background-color: #fc6a6a;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: rgba(245, 60, 60, 0);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected {
+    background-color: rgba(245, 60, 60, 0.7);
+}

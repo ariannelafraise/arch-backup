@@ -1,0 +1,93 @@
+{
+  "layer": "top",
+  "height": 40,
+  "spacing": 10,
+  "margin": 10,
+  "position": "top",
+
+  "modules-left": [
+    "clock",
+    "battery",
+    "custom/hrt"
+  ],
+
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+
+  "modules-right": [
+    "cpu",
+    "network",
+    "wireplumber",
+    "tray"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": ""
+    }
+  },
+
+  "custom/hrt": {
+    "format": "🏳️‍⚧️ {}",
+    "exec": "~/personal_dev/hrt-time/hrt-time.sh hours",
+    "interval": 60,
+    "tooltip": false
+  },
+
+  "clock": {
+        "format": "  {:%H:%M}",
+        "rotate": 0,
+        "format-alt": "󰃭  {:%d/%m/%Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+              "mode": "month",
+              "format": {
+                    "months": "<span color='#fc58b2'><b>{}</b></span>",
+                      "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                    "weekdays": "<span color='#fc58b2'><b>{}</b></span>",
+                    "today": "<span color='#f458fc'><b>{}</b></span>"
+            }
+          }
+  },
+
+  "tray": {
+    "spacing": 5
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "󰁹 {capacity}%",
+    "format-full": "󱈏  {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-alt": "󰁹 {time}"
+  },
+
+  "network": {
+    "format-wifi": "󰤨  {essid} ({signalStrength}%)",
+    "format-ethernet": "󰁹 {ipaddr}/{cidr}",
+    "tooltip-format": "󰤨  {ifname} via {gwaddr}",
+    "format-linked": "󰤨  {ifname} (No IP)",
+    "format-disconnected": "󰤭  disconnected",
+    "format-alt": "󰤨  {ifname}: {ipaddr}/{cidr}"
+  },
+
+  "wireplumber": {
+    "format": "  {volume}%",
+    "format-muted": "  {volume}%"
+  },
+
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": false
+  },
+
+  "style": "./style.css"
+}
+  
