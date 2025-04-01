@@ -19,14 +19,14 @@ echo -e "${BLUE}${BACKUP_ICON} Starting backup...${RESET}"
 
 mkdir -p $script_dir/backup/bash
 cp ~/.bashrc $script_dir/backup/bash/.bashrc
-cp -r ~/.config/waybar $script_dir/backup/waybar/
-cp -r ~/.config/hypr $script_dir/backup/hypr/
-cp -r ~/.config/kitty $script_dir/backup/kitty/
-cp -r ~/.config/eww $script_dir/backup/eww/
-cp -r ~/.config/wofi $script_dir/backup/wofi/
-cp -r ~/.config/dunst $script_dir/backup/dunst/
-cp -r ~/.config/oh-my-posh $script_dir/backup/oh-my-posh/
-cp -r ~/.config/fastfetch $script_dir/backup/fastfetch/
+cp -r ~/.config/waybar $script_dir/backup/waybar
+cp -r ~/.config/hypr $script_dir/backup/hypr
+cp -r ~/.config/kitty $script_dir/backup/kitty
+cp -r ~/.config/eww $script_dir/backup/eww
+cp -r ~/.config/wofi $script_dir/backup/wofi
+cp -r ~/.config/dunst $script_dir/backup/dunst
+cp -r ~/.config/oh-my-posh $script_dir/backup/oh-my-posh
+cp -r ~/.config/fastfetch $script_dir/backup/fastfetch
 
 echo -e "${GREEN}${DONE_ICON} Backup completed!${RESET}"
 echo -e "${YELLOW}Backup files are stored in the '${script_dir}/backup' directory.${RESET}\n"
