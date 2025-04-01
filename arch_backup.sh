@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script_dir="/home/arianne/personal_dev/arch-backup"
+script_dir=~/personal_dev/arch-backup
 
 # Pastel colors
 GREEN="\e[38;5;150m"  # Light pastel green

@@ -1,5 +1,4 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: 'Ubuntu Mono Nerd Font';
     font-size: 18px;
     font-weight: 600;
@@ -7,33 +6,36 @@
 
 window#waybar {
     background: none;
-    border: none;
     color: #ffffff;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#network,
-#wireplumber,
-#tray,
-#workspaces,
-#window,
-#custom-flag,
-#custom-hrt
-{
+tooltip {
     background-color: rgba(38, 11, 33, 0.7);
-    color: #ffffff;
+    border: none;
+}
+
+.modules-right {
+    margin-right: 10px;
+}
+
+.modules-left {
+    margin-left: 10px;
+}
+
+.modules-left > * > *, .modules-center > * > *, .modules-right > * > * {
+    background-color: rgba(38, 11, 33, 0.7);
     padding: 0px 20px;
-    margin: 10px 0px 10px 0px;
     border-radius: 20px;
+}
+
+#workspaces {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 #workspaces button {
     padding: 5px 15px;
     padding-right: 22px;
-    color: #ffffff;
     background: none;
     border: none;
     box-shadow: none;
@@ -42,7 +44,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 #battery.charging, #battery.plugged {
@@ -68,28 +70,5 @@ window#waybar {
 }
 
 #network.disconnected {
-    background-color: rgba(245, 60, 60, 0.3);
-}
-
-#temperature.critical {
-    background-color: rgba(245, 60, 60, 0.3);
-}
-
-.modules-right {
-    margin-right: 10px;
-}
-
-.modules-left {
-    margin-left: 10px;
-}
-
-#workspaces {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-tooltip {
-    background-color: rgba(38, 11, 33, 0.7);
-    color: #ffffff;
-    border: none;
+    background-color: rgba(245, 60, 60, 0.7);
 }
