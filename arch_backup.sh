@@ -27,6 +27,8 @@ cp -r ~/.config/wofi $script_dir/backup/wofi
 cp -r ~/.config/dunst $script_dir/backup/dunst
 cp -r ~/.config/oh-my-posh $script_dir/backup/oh-my-posh
 cp -r ~/.config/fastfetch $script_dir/backup/fastfetch
+cp -r ~/.config/spicetify $script_dir/backup/spicetify
+cp -r ~/.config/swaync $script_dir/backup/swaync
 
 echo -e "${GREEN}${DONE_ICON} Backup completed!${RESET}"
 echo -e "${YELLOW}Backup files are stored in the '${script_dir}/backup' directory.${RESET}\n"

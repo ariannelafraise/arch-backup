@@ -6,6 +6,7 @@
   "position": "top",
 
   "modules-left": [
+    "custom/swaync",
     "clock",
     "battery",
     "custom/hrt"
@@ -21,6 +22,14 @@
     "wireplumber",
     "tray"
   ],
+
+  "custom/swaync": {
+    "exec": "swaync-client -swb",
+    "return-type": "json",
+    "format": "  {text}",
+    "tooltip": false,
+    "on-click": "swaync-client -t -sw"
+  },
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -38,7 +47,7 @@
   },
 
   "clock": {
-        "format": "  {:%H:%M}",
+        "format": "󰥔  {:%H:%M}",
         "rotate": 0,
         "format-alt": "󰃭  {:%d/%m/%Y}",
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -85,7 +94,8 @@
 
   "cpu": {
     "format": "  {usage}%",
-    "tooltip": false
+    "tooltip": false,
+    "interval": 5
   },
 
   "style": "./style.css"
