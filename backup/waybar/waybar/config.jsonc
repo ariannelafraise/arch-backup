@@ -33,7 +33,7 @@
   "custom/hrt": {
     "format": "🏳️‍⚧️ {}",
     "exec": "~/personal_dev/hrt-time/hrt-time.sh hours",
-    "interval": 60,
+    "interval": 3600,
     "tooltip": false
   },
 
