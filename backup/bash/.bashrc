@@ -33,7 +33,7 @@ ssh-add ~/ssh_keys/github_id_rsa &> /dev/null
 # Prompt (colored)
 #PS1='  { '"$CYAN"'\u'"$RESET"'@'"$PINK"'\h'"$RESET"' '"$WHITE"' \w'"$RESET"' } '"$LIGHT_PINK"''"$RESET"'  '
 
-eval "$(oh-my-posh init bash --config .config/oh-my-posh/themes/M365Princess.omp.json)"
+#eval "$(oh-my-posh init bash --config .config/oh-my-posh/themes/M365Princess.omp.json)"
 eval "$(oh-my-posh init bash --config .config/oh-my-posh/themes/velvet.omp.json)"
 
 export NVM_DIR="$HOME/.nvm"
