@@ -18,6 +18,7 @@ alias winfetch='hyfetch --distro windows'
 alias tkt-c-un-mac='swww img ~/Pictures/macos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-4096x2304-1455.jpg --transition-type wipe --transition-fps 255 && macfetch'
 alias tkt-c-windows='swww img ~/Pictures/wallhaven-o5k319.jpg --transition-type wipe --transition-fps 255 && winfetch'
 alias tkt-c-linux='swww img "${MY_WALLPAPER}" --transition-type wipe --transition-fps 255'
+alias desktop='hyprland &> /dev/null'
 
 # SSH
 eval $(ssh-agent) &> /dev/null

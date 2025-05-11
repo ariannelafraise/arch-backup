@@ -8,8 +8,7 @@
   "modules-left": [
     "clock",
     "battery",
-    "custom/hrt",
-    "hyprland/window"
+    "custom/hrt"
   ],
 
   "modules-center": [
@@ -20,8 +19,17 @@
     "cpu",
     "network",
     "wireplumber",
-    "tray"
+    "tray",
+    "custom/swaync"
   ],
+
+  "custom/swaync": {
+    "exec": "swaync-client -swb",
+    "return-type": "json",
+    "format": "  {text}",
+    "tooltip": false,
+    "on-click": "swaync-client -t -sw"
+  },
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -34,12 +42,12 @@
   "custom/hrt": {
     "format": "🏳️‍⚧️ {}",
     "exec": "~/personal_dev/hrt-time/hrt-time.sh hours",
-    "interval": 60,
+    "interval": 3600,
     "tooltip": false
   },
 
   "clock": {
-        "format": "  {:%H:%M}",
+        "format": "󰥔  {:%H:%M}",
         "rotate": 0,
         "format-alt": "󰃭  {:%d/%m/%Y}",
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -73,7 +81,7 @@
   "network": {
     "format-wifi": "󰤨  {essid} ({signalStrength}%)",
     "format-ethernet": "󰁹 {ipaddr}/{cidr}",
-    "tooltip-format": "󰤨  {ifname} via {gwaddr}",
+    "tooltip-format": "󱂇  via {gwaddr}",
     "format-linked": "󰤨  {ifname} (No IP)",
     "format-disconnected": "󰤭  disconnected",
     "format-alt": "󰤨  {ifname}: {ipaddr}/{cidr}"
@@ -86,7 +94,8 @@
 
   "cpu": {
     "format": "  {usage}%",
-    "tooltip": false
+    "tooltip": false,
+    "interval": 5
   },
 
   "style": "./style.css"

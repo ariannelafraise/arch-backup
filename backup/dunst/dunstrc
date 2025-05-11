@@ -1,29 +1,21 @@
-# Lighthaus Color theme for Dunst
-# GIT: https://github.com/lighthaus-theme/dunst
-# Author: Adhiraj Sirohi (https://github.com/brutuski)
-#         Vasundhara Sharma (https://github.com/vasundhasauras)
+# Catpuccin Latte
 
-# Copyright © 2020-Present Lighthaus Theme
-# Copyright © 2020-Present Adhiraj Sirohi
-# Copyright © 2020-Present Vasundhara Sharma
-
+[global]
+frame_color = "#eff1f5"
+separator_color= frame
+highlight = "#1e66f5"
+height= 100
+widht = 300
 
 [urgency_low]
-# IMPORTANT: colors have to be defined in quotation marks.
-# Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#1D918B"
-foreground = "#FFEE79"
-background = "#18191E"
-timeout = 5
+background = "#eff1f5"
+foreground = "#4c4f69"
 
 [urgency_normal]
-frame_color = "#D16BB7"
-foreground = "#FFEE79"
-background = "#18191E"
-timeout = 10
+background = "#eff1f5"
+foreground = "#4c4f69"
 
 [urgency_critical]
-frame_color = "#FC2929"
-foreground = "#FFFF00"
-background = "#18191E"
-timeout = 10
+background = "#eff1f5"
+foreground = "#4c4f69"
+frame_color = "#eff1f5"
