@@ -8,6 +8,7 @@
   "modules-left": [
     "custom/swaync",
     "clock",
+    "battery",
     "custom/hrt"
   ],
 
