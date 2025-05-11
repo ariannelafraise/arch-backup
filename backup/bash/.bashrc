@@ -15,14 +15,15 @@ alias backup-config='~/personal_dev/arch-backup/arch_backup.sh'
 alias wireshark='XDG_CURRENT_DESKTOP=GNOME wireshark'
 alias macfetch='hyfetch --distro macaroni'
 alias winfetch='hyfetch --distro windows'
-alias tkt-c-un-mac='swww img ~/Pictures/macos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-4096x2304-1455.jpg --transition-type wipe --transition-fps 255 && macfetch'
-alias tkt-c-windows='swww img ~/Pictures/wallhaven-o5k319.jpg --transition-type wipe --transition-fps 255 && winfetch'
-alias tkt-c-linux='swww img "${MY_WALLPAPER}" --transition-type wipe --transition-fps 255'
+alias tkt-c-un-mac='swww img ~/Wallpapers/macos.jpg --transition-type wipe --transition-fps 255 && macfetch'
+alias tkt-c-windows='swww img ~/Wallpapers/wallhaven-o5k319.jpg --transition-type wipe --transition-fps 255 && winfetch'
+alias config-huenicorn='brave 127.0.0.1:8215'
 alias desktop='hyprland &> /dev/null'
 
 # SSH
 eval $(ssh-agent) &> /dev/null
-ssh-add ~/ssh_keys/github_id_rsa &> /dev/null
+ssh-add ~/ssh_keys/github &> /dev/null
+#ssh-add ~/ssh_keys/github_id_rsa &> /dev/null
 
 # ANSI Color Variables
 #RESET="\[\033[0m\]"

@@ -1,13 +1,13 @@
 {
   "layer": "top",
   "height": 40,
-  "spacing": 10,
+  "spacing": 0,
   "margin": 10,
   "position": "top",
 
   "modules-left": [
+    "custom/swaync",
     "clock",
-    "battery",
     "custom/hrt"
   ],
 
@@ -18,18 +18,10 @@
   "modules-right": [
     "cpu",
     "network",
+    "bluetooth",
     "wireplumber",
-    "tray",
-    "custom/swaync"
+    "tray"
   ],
-
-  "custom/swaync": {
-    "exec": "swaync-client -swb",
-    "return-type": "json",
-    "format": "  {text}",
-    "tooltip": false,
-    "on-click": "swaync-client -t -sw"
-  },
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -39,11 +31,33 @@
     }
   },
 
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂯",
+    "format-connected": "󰂱 {num_connections}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": " {device_alias} 󰁹 {device_battery_percentage}%",
+    "tooltip": true,
+    "on-click": "blueman-manager"
+  },
+
+  "custom/swaync": {
+    "exec": "swaync-client -swb",
+    "return-type": "json",
+    "format": "  {text}",
+    "tooltip": false,
+    "on-click": "swaync-client -t -sw"
+  },
+
   "custom/hrt": {
     "format": "🏳️‍⚧️ {}",
-    "exec": "~/personal_dev/hrt-time/hrt-time.sh hours",
-    "interval": 3600,
+    "exec": "~/personal_dev/hrt-time/hrt-time.sh hours_round",
+    "interval": 10,
     "tooltip": false
+  },
+
+  "huenicorn/test": {
+    "format":"owo"
   },
 
   "clock": {
@@ -63,13 +77,14 @@
   },
 
   "tray": {
+    "icon-size": 20,
     "spacing": 5
   },
 
   "battery": {
     "states": {
-      "warning": 30,
-      "critical": 15
+      "warning": 49,
+      "critical": 24
     },
     "format": "󰁹 {capacity}%",
     "format-full": "󱈏  {capacity}%",
@@ -80,16 +95,24 @@
 
   "network": {
     "format-wifi": "󰤨  {essid} ({signalStrength}%)",
-    "format-ethernet": "󰁹 {ipaddr}/{cidr}",
-    "tooltip-format": "󱂇  via {gwaddr}",
-    "format-linked": "󰤨  {ifname} (No IP)",
-    "format-disconnected": "󰤭  disconnected",
-    "format-alt": "󰤨  {ifname}: {ipaddr}/{cidr}"
+    "format-ethernet": "  connected",
+    "tooltip-format": "󱂇  {ipaddr}/{cidr} via {gwaddr}",
+    "format-linked": "  {ifname} (No IP)",
+    "format-disconnected-wifi": "󰤭  disconnected",
+    "format-disconnected-ethernet": "󰈀  disconnected",
+    "on-click": "nm-connection-editor"
   },
 
   "wireplumber": {
-    "format": "  {volume}%",
-    "format-muted": "  {volume}%"
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "  {volume}%",
+    "on-click": "pavucontrol",
+    "format-icons": [
+        " ",
+        " ",
+        " "
+    ]
   },
 
   "cpu": {

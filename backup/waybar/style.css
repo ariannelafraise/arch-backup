@@ -22,9 +22,13 @@ tooltip {
     margin-left: 10px;
 }
 
-.modules-left > * > *, .modules-center > * > *, .modules-right > * > * {
+.modules-left, .modules-center, .modules-right {
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 0px 20px;
+    border-radius: 20px;
+}
+
+.modules-left > * > *, .modules-center > * > *, .modules-right > * > * {
+    padding: 0px 15px 0px 15px;
     border-radius: 20px;
 }
 
@@ -44,9 +48,11 @@ tooltip {
     text-shadow: none;
 }
 
+/*
 #workspaces button:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
+*/
 
 #battery.charging, #battery.plugged {
     border-radius: 100px;
