@@ -20,7 +20,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-cp -r $script_dir/backup/.config ~/.config
+cp -r $script_dir/backup/.config ~/
 cp $script_dir/backup/bash/.bashrc ~/.bashrc
 
 echo -e "\n${GREEN}${DONE_ICON} Configuration applied!${RESET}"
