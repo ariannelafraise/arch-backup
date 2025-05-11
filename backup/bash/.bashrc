@@ -35,8 +35,8 @@ ssh-add ~/ssh_keys/github &> /dev/null
 # Prompt (colored)
 #PS1='  { '"$CYAN"'\u'"$RESET"'@'"$PINK"'\h'"$RESET"' '"$WHITE"' \w'"$RESET"' } '"$LIGHT_PINK"''"$RESET"'  '
 
-#eval "$(oh-my-posh init bash --config .config/oh-my-posh/themes/M365Princess.omp.json)"
-eval "$(oh-my-posh init bash --config .config/oh-my-posh/themes/velvet.omp.json)"
+#eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/M365Princess.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/velvet.omp.json)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
