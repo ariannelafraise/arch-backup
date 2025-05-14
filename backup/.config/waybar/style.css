@@ -1,5 +1,5 @@
 * {
-    font-family: 'Ubuntu Mono Nerd Font';
+    font-family: "Ubuntu Mono Nerd Font Propo";
     font-size: 18px;
     font-weight: 600;
 }
@@ -21,6 +21,7 @@ tooltip {
 .modules-left {
     margin-left: 10px;
 }
+
 /*
 .modules-left, .modules-center, .modules-right {
     background-color: rgba(0, 0, 0, 0.4);
@@ -30,7 +31,7 @@ tooltip {
 .modules-left > * > *, .modules-center > * > *, .modules-right > * > * {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
-    padding: 0px 22px 0px 20px;
+    padding: 0px 25px 0px 25px;
     border-radius: 20px;
 }
 
@@ -41,7 +42,7 @@ tooltip {
 
 #workspaces button {
     padding: 5px 15px;
-    padding-right: 22px;
+    padding-right: 15px;
     background: none;
     border-radius: 20px;
     border: none;
@@ -50,11 +51,11 @@ tooltip {
     text-shadow: none;
 }
 
-/*
+
 #workspaces button:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-*/
+
 
 #battery.charging, #battery.plugged {
     border-radius: 100px;

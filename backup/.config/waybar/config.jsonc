@@ -9,6 +9,7 @@
     "custom/swaync",
     "clock",
     "battery",
+    "power-profiles-daemon",
     "custom/hrt"
   ],
 
@@ -45,7 +46,7 @@
   "custom/swaync": {
     "exec": "swaync-client -swb",
     "return-type": "json",
-    "format": "  {text}",
+    "format": " {text}",
     "tooltip": false,
     "on-click": "swaync-client -t -sw"
   },
@@ -57,14 +58,20 @@
     "tooltip": false
   },
 
-  "huenicorn/test": {
-    "format":"owo"
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "format-icons": {
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   },
 
   "clock": {
-        "format": "󰥔  {:%H:%M}",
+        "format": "󰥔 {:%H:%M}",
         "rotate": 0,
-        "format-alt": "󰃭  {:%d/%m/%Y}",
+        "format-alt": "󰃭 {:%d/%m/%Y}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
               "mode": "month",
@@ -88,36 +95,35 @@
       "critical": 24
     },
     "format": "󰁹 {capacity}%",
-    "format-full": "󱈏  {capacity}%",
+    "format-full": "󱈏 {capacity}%",
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": "󰂄 {capacity}%",
     "format-alt": "󰁹 {time}"
   },
 
   "network": {
-    "format-wifi": "󰤨  {essid} ({signalStrength}%)",
-    "format-ethernet": "  connected",
-    "tooltip-format": "󱂇  {ipaddr}/{cidr} via {gwaddr}",
-    "format-linked": "  {ifname} (No IP)",
-    "format-disconnected-wifi": "󰤭  disconnected",
-    "format-disconnected-ethernet": "󰈀  disconnected",
+    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-ethernet": " connected",
+    "tooltip-format": "󱂇 {ipaddr}/{cidr} via {gwaddr}",
+    "format-linked": " {ifname} (No IP)",
+    "format-disconnected": " disconnected",
     "on-click": "nm-connection-editor"
   },
 
   "wireplumber": {
     "scroll-step": 5,
     "format": "{icon} {volume}%",
-    "format-muted": "  {volume}%",
+    "format-muted": " {volume}%",
     "on-click": "pavucontrol",
     "format-icons": [
-        " ",
-        " ",
-        " "
+        "",
+        "",
+        ""
     ]
   },
 
   "cpu": {
-    "format": "  {usage}%",
+    "format": " {usage}%",
     "tooltip": false,
     "interval": 5
   },
