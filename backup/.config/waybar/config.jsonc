@@ -53,8 +53,8 @@
 
   "custom/hrt": {
     "format": "🏳️‍⚧️ {}",
-    "exec": "~/personal_dev/hrt-time/hrt-time.sh hours_round",
-    "interval": 10,
+    "exec": "~/personal_dev/hrt-time/hrt-time.sh days_round",
+    "interval": 1,
     "tooltip": false
   },
 
