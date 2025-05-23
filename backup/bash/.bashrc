@@ -48,6 +48,9 @@ export NVM_DIR="$HOME/.nvm"
 export JAVA_HOME=$HOME/java/jdk1.8.0_451
 export PATH=$PATH:$JAVA_HOME/bin
 
+# Discord Cosmetics Automation Script
+export PATH=$PATH:~/personal_dev/discord-cosmetics-automation
+
 # pnpm
 export PNPM_HOME="/home/arianne/.local/share/pnpm"
 case ":$PATH:" in
