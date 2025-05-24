@@ -22,6 +22,5 @@ fi
 
 cp -r $script_dir/backup/.config ~/
 cp $script_dir/backup/bash/.bashrc ~/.bashrc
-cp $script_dir/backup/session/.xprofile ~/.xprofile
 
 echo -e "\n${GREEN}${DONE_ICON} Configuration applied!${RESET}"
