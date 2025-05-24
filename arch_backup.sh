@@ -18,6 +18,7 @@ DONE_ICON="󰾏 "    # Checkmark icon (Completed)
 echo -e "${BLUE}${BACKUP_ICON} Starting backup...${RESET}"
 
 mkdir -p $script_dir/backup/bash
+mkdir -p $script_dir/backup/session
 cp ~/.bashrc $script_dir/backup/bash/.bashrc
 cp ~/.xprofile $script_dir/backup/session/.xprofile
 cp -r ~/.config/waybar $script_dir/backup/.config
