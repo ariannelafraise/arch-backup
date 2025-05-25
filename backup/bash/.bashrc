@@ -19,7 +19,7 @@ alias winfetch='hyfetch --distro windows'
 alias tkt-c-un-mac='swww img ~/Wallpapers/macos.jpg --transition-type wipe --transition-fps 255 && macfetch'
 alias tkt-c-windows='swww img ~/Wallpapers/wallhaven-o5k319.jpg --transition-type wipe --transition-fps 255 && winfetch'
 alias config-huenicorn='brave 127.0.0.1:8215'
-alias desktop='hyprland &> /dev/null'
+alias desktop='hyprland'
 alias vpnets='openconnect-sso --server accesvpn.etsmtl.ca'
 
 # SSH
