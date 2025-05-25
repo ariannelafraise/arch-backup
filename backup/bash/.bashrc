@@ -27,18 +27,20 @@ eval $(ssh-agent) &> /dev/null
 ssh-add ~/ssh_keys/github &> /dev/null
 #ssh-add ~/ssh_keys/github_id_rsa &> /dev/null
 
-# ANSI Color Variables
-#RESET="\[\033[0m\]"
-# 256-color mode
-#CYAN="\[\033[38;5;117m\]"
-#PINK="\[\033[38;5;213m\]"
-#WHITE="\[\033[38;5;231m\]"
-#LIGHT_PINK="\[\033[38;5;217m\]"
-# Prompt (colored)
-#PS1='  { '"$CYAN"'\u'"$RESET"'@'"$PINK"'\h'"$RESET"' '"$WHITE"' \w'"$RESET"' } '"$LIGHT_PINK"''"$RESET"'  '
-
-eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/smoothie.omp.json)"
-#eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/velvet.omp.json)"
+if [[ "$TERM" != "xterm-kitty" ]]
+then
+  # ANSI Color Variables
+  RESET="\[\033[0m\]"
+  # 256-color mode
+  CYAN="\[\033[38;5;117m\]"
+  PINK="\[\033[38;5;213m\]"
+  WHITE="\[\033[38;5;231m\]"
+  LIGHT_PINK="\[\033[38;5;217m\]"
+  # Prompt (colored)
+  PS1='  { '"$CYAN"'\u'"$RESET"'@'"$PINK"'\h'"$RESET"' '"$WHITE"' \w'"$RESET"' } '"$LIGHT_PINK"''"$RESET"'  '
+else
+  eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/trans.omp.json)"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
