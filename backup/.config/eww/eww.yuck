@@ -1,10 +1,10 @@
-(defwindow powermenu
+(defwindow topbar
+    :exclusive true
     :monitor 0
     :stacking "fg"
-    :windowtype "normal"
     :wm-ignore true
-    :geometry (geometry :width "100%" :height "100%")
-    (bar)
+    :geometry (geometry :width "100%" :height "4.8%" :anchor "top center")
+    (main)
 )
 
 (defpoll time :interval "5s"
@@ -16,10 +16,15 @@
   `nmcli -t -f SIGNAL,ACTIVE device wifi \
     | awk -F':' '{if($2=="yes")print$1}'`)
 
+(defpoll hrt :interval "1s"
+    :initial "~/personal_dev/hrt-time/hrt-time.sh days_round"
+    "~/personal_dev/hrt-time/hrt-time.sh days_round"
+)
+
 (defwidget _buttons [shutdown shutdown_icon reboot reboot_icon logout logout_icon]
     (box :class "btns-box" :spacing 5
         :vexpand true :hexpand true
-        :valign "end" :halign "end"
+        :valign "start" :halign "start"
         :space-evenly false
 
         (button :onclick shutdown shutdown_icon)
@@ -64,24 +69,56 @@
     )
 )
 
-(defwidget bar []
-    (box :class "layout-box" :space-evenly false :orientation "vertical"
-        (box :valign "start" :space-evenly false :spacing 25
+(defwidget _hrttime [hrt] 
+    (box :class "hrttimebox" :space-evenly false :spacing 8
+        (label :text {"🏳️‍⚧️" + " " + hrt})
+    )
+)
+
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
+(defwidget workspaces []
+    (box :class "workspaces-widget"
+        (box
+            (label :text "${workspaces}${current_workspace}" :visible false)
+            (for workspace in workspaces
+                (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+                    (box :class "${workspace.id == current_workspace ? "current" : "inactive"}" :width 30 :height 1)
+                )
+            )
+        )
+    )
+)
+
+(defwidget main []
+    (centerbox :class "layout-box" :space-evenly false :orientation "horizontal"
+        (box :halign "start" :hexpand true :space-evenly false :spacing 10
             (_battery 
-                :status {EWW_BATTERY.BAT0.status}
-                :battery {EWW_BATTERY.BAT0.capacity}
-                :charge ""
-                :warning "󱃍"
-                :ten "󰁺"
-                :twenty "󰁻"
-                :thirty "󰁼"
-                :fourty "󰁽"
-                :fifty "󰁾"
-                :sixty "󰁿"
-                :seventy "󰂀"
-                :eighty "󰂁"
-                :ninety "󰂂"
-                :full "󰁹"
+                :status {EWW_BATTERY.BAT1.status}
+                :battery {EWW_BATTERY.BAT1.capacity}
+                :charge {"" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :warning {"󱃍" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :ten {"󰁺" + " " + EWW_BATTERY.BAT1.capacity + "%" }
+                :twenty {"󰁻" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :thirty {"󰁼" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :fourty {"󰁽" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :fifty {"󰁾" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :sixty {"󰁿" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :seventy {"󰂀" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :eighty {"󰂁" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :ninety {"󰂂" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :full {"󰁹" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+            )
+            ( _hrttime
+                :hrt hrt
+            )
+        )
+        (box :halign "center" :space-evenly false :spacing 10
+            (workspaces)
+        )
+        (box :halign "end" :hexpand true :space-evenly false :spacing 10
+            ( _hrttime
+                :hrt hrt
             )
         )
     )
