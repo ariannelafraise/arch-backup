@@ -11,11 +11,6 @@
   :initial `date +'{"hour":"%H","min":"%M"}'`
   `date +'{"hour":"%H","min":"%M"}'`)
 
-(defpoll net :interval "100s"
-  :initial `N/A`
-  `nmcli -t -f SIGNAL,ACTIVE device wifi \
-    | awk -F':' '{if($2=="yes")print$1}'`)
-
 (defpoll hrt :interval "1s"
     :initial "~/personal_dev/hrt-time/hrt-time.sh days_round"
     "~/personal_dev/hrt-time/hrt-time.sh days_round"
@@ -30,21 +25,6 @@
         (button :onclick shutdown shutdown_icon)
         (button :onclick reboot reboot_icon)
         (button :onclick logout logout_icon)
-    )
-)
-
-(defwidget _network [strength offline excellent good okay slow]
-    (box :class "net-box"
-        :space-evenly false
-        :spacing 8
-
-        (label :text
-            {
-                strength == "" ? offline :
-                strength < 26 ? slow : strength < 51 ? okay :
-                strength < 76 ? good : excellent
-            }
-        )
     )
 )
 
@@ -90,6 +70,89 @@
     )
 )
 
+(defpoll net_strength :interval "500ms"
+  :initial ""
+  `nmcli -t -f SIGNAL,ACTIVE device wifi | awk -F':' '{ if($2=="yes") print $1 }'`
+)
+(defpoll net_type :interval "500ms"
+    :initial ''
+    `nmcli -t -f state,type device status | awk -F ':' '{ if($1=="connected") print $2 }'`
+)
+(defpoll net_ssid :interval "500ms"
+    :initial ""
+    `nmcli -t -f active,ssid dev wifi | awk -F ':' '{if ($1=="yes") print $2}'`
+)
+(defwidget _network [type wifi_ssid strength ethernet offline wifi_excellent wifi_good wifi_okay wifi_slow]
+    (box :class "net-box"
+        :space-evenly false
+        :spacing 8
+        (eventbox :onclick "nm-connection-editor &"
+            (label :text
+                {
+                    type == "ethernet" ? ethernet :
+                    type == "" ? offline :
+                    type == "wifi" ? 
+                    strength < 26 ? wifi_slow + " " + wifi_ssid :
+                    strength < 51 ? wifi_okay + " " + wifi_ssid :
+                    strength < 76 ? wifi_good + " " + wifi_ssid : wifi_excellent + " " + wifi_ssid
+                    : offline
+                }
+            )
+        )
+    )
+)
+
+(defpoll bluetooth_connected_devices :interval "500ms"
+    :initial ""
+    `bluetoothctl devices | while read -r _ mac _; do bluetoothctl info "$mac" | grep -q "Connected: yes" && echo "$mac"; done | wc -l`
+)
+(defpoll bluetooth_status :interval "500ms"
+    :initial "inactive"
+    `systemctl is-active bluetooth`
+)
+(defwidget _bluetooth [connected_devices status]
+    (box :class "bluetooth-box"
+        :space-evenly false
+        :spacing 8
+        (eventbox :onclick "blueman-manager &"
+            (label :text
+                {
+                    status == "active" ?
+                    connected_devices > 0 ?
+                    "󰂱" + " " + connected_devices : "" 
+                    :
+                    "󰂯"
+                }
+            )
+        )
+    )
+)
+
+(defpoll sound_percentage :interval "50ms"
+    :initial ""
+    `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%.0f", $2 * 100}'`
+)
+(defpoll sound_muted :interval "50ms"
+    :initial ""
+    `wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo yes || echo no`
+)
+(defwidget _sound [sound_muted sound_percentage]
+    (box
+        :space-evenly false
+        :spacing 8
+        (eventbox :onclick "pavucontrol &"
+            (label :text
+                {
+                    sound_muted == "yes" ? "" + " " + sound_percentage
+                    : sound_percentage < 31 ? "" + " " + sound_percentage
+                    : sound_percentage < 61 ? "" + " " + sound_percentage
+                    : "" + " " + sound_percentage
+                }
+            )
+        )
+    )
+)
+
 (defwidget main []
     (centerbox :class "layout-box" :space-evenly false :orientation "horizontal"
         (box :halign "start" :hexpand true :space-evenly false :spacing 10
@@ -117,9 +180,26 @@
             (workspaces)
         )
         (box :halign "end" :hexpand true :space-evenly false :spacing 10
-            ( _hrttime
-                :hrt hrt
+            (_network
+                :type {net_type}
+                :wifi_ssid {net_ssid}
+                :strength {net_strength}
+                :ethernet ""
+                :offline ""
+                :wifi_excellent ""
+                :wifi_good ""
+                :wifi_okay ""
+                :wifi_slow ""
             )
+            (_bluetooth
+                :connected_devices {bluetooth_connected_devices}
+                :status {bluetooth_status}
+            )
+            (_sound
+                :sound_muted {sound_muted}
+                :sound_percentage {sound_percentage}
+            )
+            (systray :class "systray" :pack-direction "ltr")
         )
     )
 )
