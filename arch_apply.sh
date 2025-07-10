@@ -33,7 +33,7 @@ fi
 cp -r $script_dir/backup/.config ~/
 cp $script_dir/backup/bash/.bashrc ~/.bashrc
 
-echo -n "" > $script_dir/device-specific.conf
+echo -n "" > ~/.config/hypr/device-specific.conf
 echo "source = ~/.config/hypr/${DEVICE}/monitors.conf" >> ~/.config/hypr/device-specific.conf
 echo "source = ~/.config/hypr/${DEVICE}/programs.conf" >> ~/.config/hypr/device-specific.conf
 echo "source = ~/.config/hypr/${DEVICE}/autostart.conf" >> ~/.config/hypr/device-specific.conf
