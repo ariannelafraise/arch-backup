@@ -13,6 +13,16 @@ BACKUP_ICON="󰍉 "  # Floppy disk icon (Backup)
 GITHUB_ICON="󰢿 "  # GitHub icon (Push)
 DONE_ICON="󰾏 "    # Checkmark icon (Completed)
 
+DEVICE="laptop"
+case $1 in
+    "desktop")
+        DEVICE = "desktop"
+        ;;
+    "laptop")
+        DEVICE = "laptop"
+        ;;
+esac
+
 echo -e "${PINK}${GITHUB_ICON} Pulling from GitHub...${RESET}\n"
 git -C $script_dir pull origin main
 if [ $? -ne 0 ]; then
@@ -22,5 +32,11 @@ fi
 
 cp -r $script_dir/backup/.config ~/
 cp $script_dir/backup/bash/.bashrc ~/.bashrc
+
+echo -n "" > $script_dir/device-specific.conf
+echo "source = ~/.config/hypr/${DEVICE}/monitors.conf" >> $script_dir/device-specific.conf
+echo "source = ~/.config/hypr/${DEVICE}/programs.conf" >> $script_dir/device-specific.conf
+echo "source = ~/.config/hypr/${DEVICE}/autostart.conf" >> $script_dir/device-specific.conf
+echo "source = ~/.config/hypr/${DEVICE}/bindings.conf" >> $script_dir/device-specific.conf
 
 echo -e "\n${GREEN}${DONE_ICON} Configuration applied!${RESET}"
