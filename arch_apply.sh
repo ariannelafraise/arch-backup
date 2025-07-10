@@ -16,10 +16,10 @@ DONE_ICON="󰾏 "    # Checkmark icon (Completed)
 DEVICE="laptop"
 case $1 in
     "desktop")
-        $DEVICE = "desktop"
+        DEVICE="desktop"
         ;;
     "laptop")
-        $DEVICE = "laptop"
+        DEVICE="laptop"
         ;;
 esac
 
