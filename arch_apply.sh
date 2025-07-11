@@ -36,10 +36,10 @@ cp $script_dir/backup/bash/.bashrc ~/.bashrc
 
 case $DEVICE in
     "desktop")
-        sed -i -e 's/laptop/desktop/g' device-specific.jsonc 
+        sed -i -e 's/laptop/desktop/g' ~/.config/waybar/device-specific.jsonc 
         ;;
     "laptop")
-        sed -i -e 's/desktop/laptop/g' device-specific.jsonc 
+        sed -i -e 's/desktop/laptop/g' ~/.config/waybar/device-specific.jsonc 
         ;;
 esac
 
