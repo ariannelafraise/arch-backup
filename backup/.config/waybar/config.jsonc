@@ -1,8 +1,9 @@
 {
   "layer": "top",
-  "height": 40,
+  "height": 34,
   "spacing": 10,
-  "margin": 10,
+  "margin-top": 10,
+  "margin-bottom": 10,
   "position": "top",
 
   "modules-left": [
@@ -19,11 +20,38 @@
 
   "modules-right": [
     //"cpu",
-    "network",
-    "bluetooth",
+    "group/connectivity",
     "wireplumber",
+    "privacy",
     "tray"
   ],
+
+  "group/connectivity": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "bluetooth"
+    ],
+    "drawer": {
+      "children-class": "drawer-child"
+    }
+  },
+
+  "custom/spotify": {
+    "format": "{} ",
+    "exec": "~/.config/waybar/scripts/spotify.sh",
+    "interval": 1,
+    "on-click": "playerctl -p spotify play-pause",
+    "on-scroll-up": "playerctl -p spotify next",
+    "on-scroll-down": "playerctl -p spotify previous",
+    "exec-if": "pgrep spotify"
+  },
+
+  "image#spotify-album": {
+     "exec":"~/.config/waybar/scripts/album_art.sh",
+     "size": 24,
+     "interval": 1
+  },
 
   "hyprland/workspaces": {
     "format-icons": {
@@ -70,10 +98,44 @@
     "on-click": "swaync-client -t -sw"
   },
 
+  "privacy": {
+    "icon-spacing": 10,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ],
+    "ignore-monitor": true,
+    "ignore": [
+      {
+        "type": "audio-in",
+        "name": "cava"
+      },
+      {
+        "type": "screenshare",
+        "name": "obs"
+      }
+    ]
+  },
+
   "custom/hrt": {
     "format": "🏳️‍⚧️ {}",
-    "exec": "~/personal_dev/hrt-time/hrt-time.sh days_round",
-    "interval": 1,
+    "exec": "~/personal_dev/hrt-time/hrt-time.sh months",
+    "interval": 60,
     "tooltip": false
   },
 
@@ -126,6 +188,7 @@
     "tooltip-format": "󱂇 {ipaddr}/{cidr} via {gwaddr}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": " disconnected",
+    "format": "",
     "on-click": "nm-connection-editor"
   },
 

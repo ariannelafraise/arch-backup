@@ -22,6 +22,10 @@ tooltip {
     margin-left: 10px;
 }
 
+.drawer-child * {
+    margin-left: 20px;
+}
+
 /*
 .modules-left, .modules-center, .modules-right {
     background-color: rgba(0, 0, 0, 0.4);
