@@ -1,9 +1,8 @@
 {
     "modules-left": [
 		"custom/swaync",
-		"clock",
-		"group/power",
-		"custom/hrt"
+		"group/time",
+		"group/power"
 	],
 
 	"modules-center": [
