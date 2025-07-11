@@ -34,6 +34,15 @@ cp -r $script_dir/backup/Wallpapers ~/
 cp -r $script_dir/backup/.config ~/
 cp $script_dir/backup/bash/.bashrc ~/.bashrc
 
+case $DEVICE in
+    "desktop")
+        sed -i -e 's/laptop/desktop/g' device-specific.jsonc 
+        ;;
+    "laptop")
+        sed -i -e 's/desktop/laptop/g' device-specific.jsonc 
+        ;;
+esac
+
 echo -n "" > ~/.config/hypr/device-specific.conf
 echo "source = ~/.config/hypr/${DEVICE}/monitors.conf" >> ~/.config/hypr/device-specific.conf
 echo "source = ~/.config/hypr/${DEVICE}/programs.conf" >> ~/.config/hypr/device-specific.conf

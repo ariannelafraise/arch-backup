@@ -99,3 +99,7 @@ tooltip {
     color: rgb(255, 164, 164);
     /* background-color: rgba(245, 60, 60, 0.7); */
 }
+
+#privacy-item {
+    margin: 0px;
+}
