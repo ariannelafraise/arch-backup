@@ -124,10 +124,9 @@
 		"interval": 1,
 		"format-icons": ["", "", "", "", ""],
 		"format": "{icon} {capacity}%",
-		"format-full": "󱈏 {capacity}%",
-		"format-charging": "󰂄 {capacity}%",
-		"format-plugged": "󰂄 {capacity}%",
-		"format-alt": "󰁹 {time}"
+		"format-charging": "󱐋 {capacity}%",
+		"format-plugged": "󱐋 {capacity}%",
+		"format-alt": "{icon} {time}"
 	},
 
 	"network": {
