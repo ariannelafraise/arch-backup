@@ -60,14 +60,6 @@ tooltip {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-
-#battery.charging, #battery.plugged {
-    border-radius: 100px;
-    background-color: rgba(137, 255, 101, 0.7);
-    /*border-left: 3px solid rgba(255, 255, 255, 1);
-    border-right: 3px solid rgba(255, 255, 255, 1);*/
-}
-
 @keyframes blink-red-bg {
     to {
         background-color: rgba(252, 106, 106, 0.7);
@@ -93,6 +85,14 @@ tooltip {
 #battery.warning:not(.charging) {
     color: rgb(255, 238, 164);
     /*background-color: rgba(255, 226, 97, 0.7);*/
+}
+
+#battery.charging, #battery.plugged {
+    color: rgb(185, 255, 164)
+    /* background-color: rgba(137, 255, 101, 0.7); */
+    /*border-radius: 100px;
+    border-left: 3px solid rgba(255, 255, 255, 1);
+    border-right: 3px solid rgba(255, 255, 255, 1);*/
 }
 
 #network.disconnected {
