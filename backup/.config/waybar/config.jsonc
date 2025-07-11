@@ -1,7 +1,7 @@
 {
 	/* SETTINGS */
 	"layer": "top",
-	"height": 34,
+	"height": 36,
 	"spacing": 10,
 	"margin-top": 10,
 	"margin-bottom": 10,
@@ -11,8 +11,7 @@
 	"modules-left": [
 		//"custom/swaync",
 		"clock",
-		"battery",
-		"power-profiles-daemon",
+		"group/power",
 		"custom/hrt"
 	],
 
@@ -33,6 +32,17 @@
 		"modules": [
 			"network",
 			"bluetooth"
+		],
+		"drawer": {
+			"children-class": "drawer-child"
+		}
+	},
+
+	"group/power": {
+		"orientation": "horizontal",
+		"modules": [
+			"battery",
+			"power-profiles-daemon"
 		],
 		"drawer": {
 			"children-class": "drawer-child"
@@ -160,10 +170,12 @@
 
 	"battery": {
 		"states": {
-			"warning": 49,
+			"warning": 50,
 			"critical": 24
 		},
-		"format": "󰁹 {capacity}%",
+		"interval": 1,
+		"format-icons": ["", "", "", "", ""],
+		"format": "{icon} {capacity}%",
 		"format-full": "󱈏 {capacity}%",
 		"format-charging": "󰂄 {capacity}%",
 		"format-plugged": "󰂄 {capacity}%",
