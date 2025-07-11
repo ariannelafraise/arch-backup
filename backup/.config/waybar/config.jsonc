@@ -171,7 +171,7 @@
 	"battery": {
 		"states": {
 			"warning": 50,
-			"critical": 24
+			"critical": 25
 		},
 		"interval": 1,
 		"format-icons": ["", "", "", "", ""],
