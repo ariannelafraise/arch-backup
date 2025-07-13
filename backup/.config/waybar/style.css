@@ -38,6 +38,12 @@ tooltip {
     border-radius: 20px;
     padding: 0px 25px 0px 25px;
     border-radius: 20px;
+    transition: background-color 500ms;
+}
+
+.modules-left > * > *:hover, .modules-center > * > *:hover, .modules-right > * > *:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 500ms;
 }
 
 #workspaces {
@@ -54,10 +60,12 @@ tooltip {
     box-shadow: none;
     font-weight: normal;
     text-shadow: none;
+    transition: background-color 250ms;
 }
 
 #workspaces button:hover {
     background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 250ms;
 }
 
 @keyframes blink-red-bg {
