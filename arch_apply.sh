@@ -32,8 +32,8 @@ fi
 
 # apply config
 rm -r ~/Wallpapers
-cp -r $script_dir/backup/Wallpapers ~/Wallpapers
-cp -r $script_dir/backup/.config ~/.config
+cp -r $script_dir/backup/Wallpapers ~/
+cp -r $script_dir/backup/.config ~/
 cp $script_dir/backup/bash/.bashrc ~/.bashrc
 
 # waybar device specific
