@@ -30,11 +30,13 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+# apply config
 rm -r ~/Wallpapers
-cp -r $script_dir/backup/Wallpapers ~/
-cp -r $script_dir/backup/.config ~/
+cp -r $script_dir/backup/Wallpapers ~/Wallpapers
+cp -r $script_dir/backup/.config ~/.config
 cp $script_dir/backup/bash/.bashrc ~/.bashrc
 
+# waybar device specific
 case $DEVICE in
     "desktop")
         sed -i -e 's/laptop/desktop/g' ~/.config/waybar/device-specific.jsonc 
@@ -44,6 +46,7 @@ case $DEVICE in
         ;;
 esac
 
+# hyprland device specific
 echo -n "" > ~/.config/hypr/device-specific.conf
 echo "source = ~/.config/hypr/${DEVICE}/monitors.conf" >> ~/.config/hypr/device-specific.conf
 echo "source = ~/.config/hypr/${DEVICE}/programs.conf" >> ~/.config/hypr/device-specific.conf

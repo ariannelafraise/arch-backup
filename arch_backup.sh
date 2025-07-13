@@ -33,7 +33,7 @@ cp -r ~/.config/fastfetch $script_dir/backup/.config
 cp -r ~/.config/spicetify $script_dir/backup/.config
 cp -r ~/.config/swaync $script_dir/backup/.config
 cp -r ~/.config/btop $script_dir/backup/.config
-cp -r ~/Wallpapers $script_dir/backup/Wallpapers
+cp -r ~/Wallpapers $script_dir/backup/
 
 echo -e "${GREEN}${DONE_ICON} Backup completed!${RESET}"
 echo -e "${YELLOW}Backup files are stored in the '${script_dir}/backup' directory.${RESET}\n"
