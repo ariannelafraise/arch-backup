@@ -44,6 +44,24 @@
 		"on-click": "swaync-client -t -sw"
 	},
 
+	"custom/lock": {
+		"format": "<span color='#ffd6a4'></span>",
+		"tooltip-format": "Lock",
+		"on-click": "hyprlock"
+	},
+
+	"custom/restart": {
+		"format": "<span color='#acffa4'></span>",
+		"tooltip-format": "Restart",
+		"on-click": "reboot"
+	},
+
+	"custom/shutdown": {
+		"format": "<span color='#ffa4a4'>⏻</span>",
+		"tooltip-format": "Shutdown",
+		"on-click": "shutdown now"
+	},
+
 	"privacy": {
 		"icon-spacing": 10,
 		"icon-size": 18,

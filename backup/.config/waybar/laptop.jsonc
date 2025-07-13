@@ -1,8 +1,9 @@
 {
     "modules-left": [
+		"group/power",
 		"custom/swaync",
 		"group/time",
-		"group/power"
+		"group/battery"
 	],
 
 	"modules-center": [
@@ -37,7 +38,7 @@
 		}
 	},
 
-	"group/power": {
+	"group/battery": {
 		"orientation": "horizontal",
 		"modules": [
 			"battery",
@@ -54,6 +55,18 @@
 		"modules": [
 			"clock",
 			"custom/hrt"
+		],
+		"drawer": {
+			"children-class": "drawer-child"
+		}
+	},
+	
+	"group/power": {
+		"orientation": "horizontal",
+		"modules": [
+			"custom/lock",
+			"custom/restart",
+			"custom/shutdown"
 		],
 		"drawer": {
 			"children-class": "drawer-child"
