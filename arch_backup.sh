@@ -19,6 +19,8 @@ echo -e "${BLUE}${BACKUP_ICON} Starting backup...${RESET}"
 
 rm -r $script_dir/backup
 mkdir -p $script_dir/backup/bash
+mkdir -p $script_dir/backup/.config
+mkdir -p $script_dir/backup/Wallpapers
 cp ~/.bashrc $script_dir/backup/bash/.bashrc
 cp -r ~/.config/waybar $script_dir/backup/.config
 cp -r ~/.config/hypr $script_dir/backup/.config
