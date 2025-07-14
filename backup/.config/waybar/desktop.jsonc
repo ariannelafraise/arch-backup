@@ -29,7 +29,6 @@
 	"group/connectivity": {
 		"orientation": "horizontal",
 		"modules": [
-			"network",
 			"bluetooth"
 		],
 		"drawer": {

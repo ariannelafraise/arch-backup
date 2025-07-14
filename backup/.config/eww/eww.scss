@@ -1,52 +1,8 @@
-.layout-box {
-    color: #ffffff;
-    font-family: "Ubuntu Mono Nerd Font Propo";
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0.5em;
-}
-
-.layout-box > * > * {
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 0em 1.5em 0em 1.5em;
-    border-radius: 2em;
-}
-
-.layout-box > * > .systray {
-    background: rgba(0,0,0,0.4);
-}
-
-@keyframes expand {
-    from {
-        margin-left: 0.65em;
-        margin-right: 0.65em;
+.activate-linux {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+  
+    &.background {
+      background: none;
     }
-    to {
-        margin-left: 0.25em;
-        margin-right: 0.25em;
-    }
-}
-
-.current {
-    margin-top: 0.75em;
-    margin-bottom: 0.75em;
-    background-color: rgba(255,255,255,1);
-    border-radius: 1em;
-    transition: width 2s;
-    animation: expand 250ms forwards;
-}
-
-.inactive {
-    margin-top: 0.75em;
-    margin-left: 0.65em;
-    margin-right: 0.65em;
-    margin-bottom: 0.75em;
-    background-color: rgba(255,255,255,0.4);
-    border: 0.08em solid rgba(255,255,255,0);
-    border-radius: 1em;
-    transition: width 2s;
-}
-
-window {
-    background: transparent;
-}
+  }

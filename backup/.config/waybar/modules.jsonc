@@ -114,7 +114,7 @@
 	},
 
 	"clock": {
-		"format": "󰥔 {:%H:%M}",
+		"format": " {:%H:%M}",
 		"rotate": 0,
 		"format-alt": "󰃭 {:%d/%m/%Y}",
 		"tooltip-format": "<tt>{calendar}</tt>",
@@ -153,7 +153,7 @@
 		"tooltip-format": "󱂇 {ipaddr}/{cidr} via {gwaddr}",
 		"format-linked": " {ifname} (No IP)",
 		"format-disconnected": " disconnected",
-		"format": "",
+		"format": " {ifname}",
 		"on-click": "nm-connection-editor"
 	},
 
@@ -163,9 +163,9 @@
 		"format-muted": " {volume}%",
 		"on-click": "pavucontrol",
 		"format-icons": [
-			"",
-			"",
-			""
+			"󰕿",
+			"󰖀",
+			"󰕾"
 		]
 	},
 
