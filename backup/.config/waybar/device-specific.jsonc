@@ -1,5 +1,5 @@
 {
 	"include": [
-		"~/.config/waybar/laptop.jsonc"
+		"~/.config/waybar/desktop.jsonc"
 	]
 }
