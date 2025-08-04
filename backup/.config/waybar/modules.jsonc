@@ -107,9 +107,9 @@
 		"format": "{icon}",
 		"tooltip-format": "Power profile: {profile}",
 		"format-icons": {
-			"performance": "<span color='#ffd6a4'></span>",
-			"balanced": "<span color='#75aaff'></span>",
-			"power-saver": "<span color='#acffa4'></span>"
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
 		}
 	},
 
