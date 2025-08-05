@@ -8,19 +8,33 @@
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 
-# Aliases
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+## Dotfiles aliases
 alias backup-config='~/personal_dev/arch-backup/arch_backup.sh'
 alias apply-config='~/personal_dev/arch-backup/arch_apply.sh'
+
+## Modified default commands aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias wireshark='XDG_CURRENT_DESKTOP=GNOME wireshark'
+
+## Fun aliases
 alias macfetch='hyfetch --distro macaroni'
 alias winfetch='hyfetch --distro windows'
 alias tkt-c-un-mac='swww img ~/Wallpapers/macos.jpg --transition-type wipe --transition-fps 255 && macfetch'
 alias tkt-c-windows='swww img ~/Wallpapers/wallhaven-o5k319.jpg --transition-type wipe --transition-fps 255 && winfetch'
+
+## QOL aliases
 alias config-huenicorn='brave 127.0.0.1:8215'
 alias desktop='hyprland'
+
+## ETS aliases
 alias vpnets='openconnect-sso --server accesvpn.etsmtl.ca'
+
+## NAS aliases
+alias nas-pdc-mount='sudo mount -t cifs -o credentials=/etc/samba/credentials,uid=1000,gid=1000,x-systemd.automount,_netdev //nas-arianne.pdc.ovh/PDC /nas/pdc'
+alias nas-pdc-umount='sudo umount /nas/pdc'
+alias nas-arianne-mount='sudo mount -t cifs -o credentials=/etc/samba/credentials,uid=1000,gid=1000,x-systemd.automount,_netdev //nas-arianne.pdc.ovh/Arianne /nas/arianne'
+alias nas-arianne-umount='sudo umount /nas/arianne'
 
 # SSH
 eval $(ssh-agent) &> /dev/null
