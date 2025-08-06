@@ -97,7 +97,7 @@
 	},
 
 	"custom/hrt": {
-		"format": "🏳️‍⚧️ {}",
+		"format": "🩷 {}",
 		"exec": "~/personal_dev/hrt-time/hrt-time.sh months",
 		"interval": 60,
 		"tooltip": false
