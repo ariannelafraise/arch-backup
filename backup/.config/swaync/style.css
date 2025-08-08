@@ -1,23 +1,30 @@
 /*
  * vim: ft=less
  */
+:root {
+  --noti-bg: rgba(0, 0, 0, 0.4);
+  --noti-fg: #FFFFFF;
+  --noti-bg-hover: rgba(0, 0, 0, 0.7);
+  --noti-bg-focus: #A3BE8C00;
+  --noti-close-bg: rgba(255, 255, 255, 0.0);
+  --noti-close-bg-hover: rgba(255, 255, 255, 0.0);
+  --noti-urgent: #BF616A;
+  --action-color: rgba(255, 82, 174, 1);
 
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgba(0, 0, 0, 0.4);
-@define-color noti-bg-alt rgba(0, 0, 0, 0.4);
-@define-color noti-fg #FFFFFF;
-@define-color noti-bg-hover rgba(0, 0, 0, 0.5);
-@define-color noti-bg-focus #A3BE8C00;
-@define-color noti-close-bg rgba(255, 255, 255, 0.0);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.0);
-@define-color noti-urgent #BF616A;
+  --cc-bg: rgba(18, 17, 18, 0.7);
+  --cc-items-bg: rgba(0, 0, 0, 0.5);
+  --cc-btn: rgba(255, 255, 255, 0.3);
+  --cc-btn-disabled: rgba(255, 255, 255, 0.1);
+  --cc-btn-hover: var(--action-color);
 
-@define-color bg-selected rgba(0, 0, 0, 0);
+  --bg-selected: rgba(0, 0, 0, 0);
 
-@define-color slider-color #FF52AE;
+  --slider-color: var(--action-color);
+}
 
-*{
-  color: @noti-fg;
+
+* {
+  color: var(--noti-fg);
 }
 
 .notification-row {
@@ -26,14 +33,13 @@
 
 .notification-row:focus,
 .notification-row:hover {
-  background: @noti-bg-focus;
+  background: var(--noti-bg-focus);
 }
 
 .notification {
   border-radius: 12px;
+  border: none;
   margin: 6px 12px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
-    0 2px 6px 2px rgba(0, 0, 0, 0.3);
   padding: 0;
 }
 
@@ -51,7 +57,7 @@
 } */
 
 .critical {
-  background: @noti-urgent;
+  background: var(--noti-urgent);
   padding: 2px;
   border-radius: 12px;
 }
@@ -64,7 +70,7 @@
 }
 
 .close-button {
-  background: @noti-close-bg;
+  background: var(--noti-close-bg);
   color: white;
   text-shadow: none;
   padding: 0;
@@ -79,7 +85,7 @@
 
 .close-button:hover {
   box-shadow: none;
-  background: @noti-close-bg-hover;
+  background: var(--noti-close-bg-hover);
   transition: all 0.15s ease-in-out;
   border: none;
 }
@@ -89,15 +95,13 @@
   padding: 4px;
   margin: 0;
   box-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background-color: var(--noti-bg);
   color: white;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
-  -gtk-icon-effect: none;
-  background: @noti-bg-hover;
+  background: var(--noti-bg-hover);
 }
 
 .notification-default-action {
@@ -123,7 +127,6 @@
 
 .notification-action:last-child {
   border-bottom-right-radius: 10px;
-  border-right: 1px solid @noti-border-color;
 }
 
 .image {}
@@ -166,7 +169,7 @@
 }
 
 .control-center {
-  background-color: @noti-bg-alt;
+  background-color: var(--cc-bg);
 }
 
 .control-center-list {
@@ -184,46 +187,58 @@
 
 /*** Widgets ***/
 
+/* Notifications Widget */
+
+.widget-notification {
+  background-color: var(--cc-items-bg);
+  border-radius: 12px;
+}
+
 /* Title widget */
 .widget-title {
   margin: 8px;
   font-size: 1.5rem;
+  background-color: var(--cc-items-bg);
+  border-radius: 12px;
 }
 
-.widget-title>button {
+.widget-title > button {
   font-size: initial;
-  color: white;
   text-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background-color: var(--cc-btn);
   box-shadow: none;
   border-radius: 12px;
 }
 
-.widget-title>button:hover {
-  background: @noti-bg-hover;
+.widget-title > button:hover {
+  background: var(--cc-btn-hover);
+}
+
+.widget-title > button:disabled {
+  background-color: var(--cc-btn-disabled);
 }
 
 /* DND widget */
 .widget-dnd {
   margin: 8px;
   font-size: 1.1rem;
+  background-color: var(--cc-items-bg);
+  border-radius: 12px;
 }
 
 .widget-dnd>switch {
   font-size: initial;
   border-radius: 12px;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: var(--noti-bg);
   box-shadow: none;
 }
 
 .widget-dnd>switch:checked {
-  background: @slider-color;
+  background: var(--slider-color);
 }
 
 .widget-dnd>switch slider {
-  background: @noti-bg-hover;
+  background: var(--noti-bg-hover);
   border-radius: 12px;
 }
 
@@ -257,22 +272,53 @@
 
 /* Volume and Brightness Widget*/
 
-.widget-volume {
-  background-color: @noti-bg;
-  color: @slider-color;
+.widget-volume, .widget-backlight {
+  background-color: var(--cc-items-bg);
   padding: 4px 8px 8px 8px;
   margin: 0px 8px 8px 8px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-radius: 12px;
 }
 
-.widget-backlight {
-  background-color: @noti-bg;
-  color: @slider-color;
-  padding: 8px 8px 4px 8px;
-  margin: 8px 8px 0px 8px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+/* Switch Widget */
+
+.widget-dnd > switch {
+  background-color: var(--noti-bg);
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.widget-dnd > switch slider {
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+.widget-dnd > switch:checked {
+  background-color: var(--action-color);
+}
+
+.widget-dnd > switch:checked slider {
+  background-color: white;
+}
+
+.widget-dnd > switch:hover {
+  background-color: var(--cc-btn-hover);
+}
+
+.widget-dnd > switch:checked:hover {
+  background-color: var(--slider-color);
+}
+
+/* Slider Widget */
+
+scale trough { /* Slider background */
+}
+
+scale slider { /* Slider handle */
+
+}
+
+scale highlight { /* Slider highlight */
+  background-color: var(--slider-color);
 }
 
 .KB {
@@ -282,7 +328,7 @@
 }
 
 .power-buttons{
-  background-color: @noti-bg;
+  background-color: var(--noti-bg);
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
@@ -295,7 +341,7 @@
 }
 
 .power-buttons>button:hover {
-  background: @noti-bg-hover;
+  background: var(--noti-bg-hover);
 }
 
 .widget-menubar {
@@ -316,20 +362,20 @@
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
-  background-color: @noti-bg;
+  background-color: var(--cc-items-bg);
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button{
-  background: @noti-bg;
+  background: var(--cc-btn);
   border-radius: 12px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @noti-bg-hover;
+  background: var(--cc-btn-hover);
 }
 
 .powermode-buttons{
-  background-color: @noti-bg;
+  background-color: var(--noti-bg);
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
@@ -341,6 +387,6 @@
 }
 
 .powermode-buttons>button:hover {
-  background: @noti-bg-hover;
+  background: var(--noti-bg-hover);
 }
 
