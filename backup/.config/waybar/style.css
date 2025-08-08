@@ -10,7 +10,7 @@ window#waybar {
 }
 
 tooltip {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
     border: none;
 }
 
@@ -42,7 +42,7 @@ tooltip {
 }
 
 .modules-left > * > *:hover, .modules-center > * > *:hover, .modules-right > * > *:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     transition: background-color 500ms;
 }
 
