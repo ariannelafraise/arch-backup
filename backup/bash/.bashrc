@@ -53,7 +53,7 @@ then
   # Prompt (colored)
   PS1='  { '"$CYAN"'\u'"$RESET"'@'"$PINK"'\h'"$RESET"' '"$WHITE"' \w'"$RESET"' } '"$LIGHT_PINK"''"$RESET"'  '
 else
-  eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/velvet.omp.json)"
+  eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/trans.omp.json)"
 fi
 
 export NVM_DIR="$HOME/.nvm"
