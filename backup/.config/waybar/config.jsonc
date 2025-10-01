@@ -1,8 +1,10 @@
 {
 	/* SETTINGS */
 	"layer": "top",
-	"height": 36,
+	"height": 40,
 	"spacing": 10,
+	"margin-left": 10,
+	"margin-right": 10,
 	"margin-top": 10,
 	"margin-bottom": 10,
 	"position": "top",

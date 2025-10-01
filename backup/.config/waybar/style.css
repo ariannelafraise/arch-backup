@@ -5,8 +5,16 @@
 }
 
 window#waybar {
-    background: none;
+    background: linear-gradient(
+        135deg,
+        rgb(255, 161, 225) 0%,
+        rgb(255, 180, 230) 25%,
+        rgb(255, 155, 218) 50%,
+        rgb(255, 180, 230) 75%,
+        rgb(255, 161, 225) 100%
+    );
     color: #ffffff;
+    border-radius: 20px;
 }
 
 tooltip {
@@ -34,7 +42,7 @@ tooltip {
 */
 
 .modules-left > * > *, .modules-center > * > *, .modules-right > * > * {
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-color: rgba(0, 0, 0, 0.4); */
     border-radius: 20px;
     padding: 0px 25px 0px 25px;
     border-radius: 20px;
@@ -42,7 +50,7 @@ tooltip {
 }
 
 .modules-left > * > *:hover, .modules-center > * > *:hover, .modules-right > * > *:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.09);
     transition: background-color 500ms;
 }
 
@@ -70,13 +78,13 @@ tooltip {
 
 @keyframes blink-red-bg {
     to {
-        background-color: rgba(252, 106, 106, 0.7);
+        background-color: rgba(255, 0, 0, 0.7);
     }
 }
 
 @keyframes blink-red-fg {
     to {
-        color: rgb(255, 164, 164);
+        color: rgb(255, 0, 0);
     }
 }
 
@@ -84,7 +92,7 @@ tooltip {
 #battery.critical:not(.charging) {
     background-color: rgba(252, 106, 106, 0);
     animation-name: blink-red-fg;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-timing-function: steps(25);
     animation-iteration-count: infinite;
     animation-direction: alternate;
