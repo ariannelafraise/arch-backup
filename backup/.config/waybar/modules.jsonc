@@ -58,7 +58,7 @@
 	},
 
 	"custom/lock": {
-		"format": "<span color='#ffd6a4'></span>",
+		"format": "<span color='#ffeea4'></span>",
 		"tooltip-format": "Lock",
 		"on-click": "hyprlock"
 	},
@@ -70,7 +70,7 @@
 	},
 
 	"custom/shutdown": {
-		"format": "<span color='#ffa4a4'>⏻</span>",
+		"format": "<span color='#ff7070'>⏻</span>",
 		"tooltip-format": "Shutdown",
 		"on-click": "shutdown now"
 	},
@@ -150,7 +150,7 @@
 	"battery": {
 		"states": {
 			"warning": 50,
-			"critical": 25
+			"critical": 30
 		},
 		"interval": 1,
 		"format-icons": ["", "", "", "", ""],
