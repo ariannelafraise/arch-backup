@@ -22,6 +22,7 @@ alias macfetch='hyfetch --distro macaroni'
 alias winfetch='hyfetch --distro windows'
 alias tkt-c-un-mac='swww img ~/Wallpapers/macos.jpg --transition-type wipe --transition-fps 255 && macfetch'
 alias tkt-c-windows='swww img ~/Wallpapers/wallhaven-o5k319.jpg --transition-type wipe --transition-fps 255 && winfetch'
+alias gyatt='git'
 
 ## QOL aliases
 alias config-huenicorn='brave 127.0.0.1:8215'
