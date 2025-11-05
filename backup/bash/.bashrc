@@ -27,6 +27,7 @@ alias gyatt='git'
 ## QOL aliases
 alias config-huenicorn='brave 127.0.0.1:8215'
 alias desktop='hyprland'
+alias disk-usage-here='du -h --max-depth=1'
 
 ## ETS aliases
 alias vpnets='openconnect-sso --server accesvpn.etsmtl.ca'
