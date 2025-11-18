@@ -34,7 +34,7 @@ fi
 rm -r ~/Wallpapers
 cp -r $script_dir/backup/Wallpapers ~/
 cp -r $script_dir/backup/.config ~/
-cp $script_dir/backup/zsh/* ~/
+cp $script_dir/backup/zsh/. ~/
 cp $script_dir/backup/bash/.bashrc ~/
 
 # waybar device specific
