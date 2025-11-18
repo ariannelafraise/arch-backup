@@ -1,0 +1,129 @@
+* {
+    font-family: "Ubuntu Mono Nerd Font Propo";
+    font-size: 18px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 161, 225, 0.8) 0%,
+        rgba(255, 180, 230, 0.8) 25%,
+        rgba(255, 155, 218, 0.8) 50%,
+        rgba(255, 180, 230, 0.8) 75%,
+        rgba(255, 161, 225, 0.8) 100%
+    );
+    color: #ffffff;
+    border-radius: 0px;
+}
+
+#custom-img {
+    background-image: url("/home/arianne/Pictures/shark_happy.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 20px;
+}
+
+tooltip {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+.modules-right {
+    margin-right: 10px;
+}
+
+.modules-left {
+    margin-left: 10px;
+}
+
+.drawer-child * {
+    margin-left: 20px;
+}
+
+/*
+.modules-left, .modules-center, .modules-right {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px
+}
+*/
+
+.modules-left > * > *, .modules-center > * > *, .modules-right > * > * {
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    border-radius: 20px;
+    padding: 0px 25px 0px 25px;
+    border-radius: 20px;
+    transition: background-color 500ms;
+}
+
+.modules-left > * > *:hover, .modules-center > * > *:hover, .modules-right > * > *:hover {
+    background-color: rgba(0, 0, 0, 0.09);
+    transition: background-color 500ms;
+}
+
+#workspaces {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#workspaces button {
+    padding: 5px 15px;
+    padding-right: 15px;
+    background: none;
+    border-radius: 20px;
+    border: none;
+    box-shadow: none;
+    font-weight: normal;
+    text-shadow: none;
+    transition: background-color 250ms;
+}
+
+#workspaces button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 250ms;
+}
+
+@keyframes blink-red-bg {
+    to {
+        background-color: rgba(255, 0, 0, 0.7);
+    }
+}
+
+@keyframes blink-red-fg {
+    to {
+        color: rgb(255, 0, 0);
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: rgba(252, 106, 106, 0);
+    animation-name: blink-red-fg;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(25);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning:not(.charging) {
+    color: rgb(255, 238, 164);
+    /*background-color: rgba(255, 226, 97, 0.7);*/
+}
+
+#battery.charging, #battery.plugged {
+    color: rgb(185, 255, 164)
+    /* background-color: rgba(137, 255, 101, 0.7); */
+    /*border-radius: 100px;
+    border-left: 3px solid rgba(255, 255, 255, 1);
+    border-right: 3px solid rgba(255, 255, 255, 1);*/
+}
+
+#network.disconnected {
+    color: #ff7070;
+    /* background-color: rgba(245, 60, 60, 0.7); */
+}
+
+#privacy-item {
+    margin: 0px;
+}
