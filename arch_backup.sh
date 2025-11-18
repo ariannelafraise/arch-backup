@@ -35,6 +35,7 @@ cp -r ~/.config/fastfetch $script_dir/backup/.config
 cp -r ~/.config/spicetify $script_dir/backup/.config
 cp -r ~/.config/swaync $script_dir/backup/.config
 cp -r ~/.config/btop $script_dir/backup/.config
+cp -r ~/.config/zed $script_dir/backup/.config
 cp -r ~/Wallpapers $script_dir/backup/
 
 echo -e "${GREEN}${DONE_ICON} Backup completed!${RESET}"
