@@ -2,6 +2,7 @@
 	"hyprland/workspaces": {
 		"format-icons": {
 			"default": "<span color='#ffffff' alpha='100%'>♥</span>",
+			"special": "<span color='#ffffff' alpha='100%'></span>",
 			"active": "<span color='#ffffff' alpha='100%'></span>" //  󰊠  󰢚 󰭟 󰄛 󰋑
 		},
 		"format": "{icon}<span color='#ffffff' size='100%' alpha='50%'>{windows}</span>",
@@ -23,7 +24,8 @@
 		},
 		"persistent-workspaces": {
 			"*": 5
-		}
+		},
+		"show-special": true
 	},
 
 	"bluetooth": {
@@ -202,5 +204,10 @@
 		"exec":"~/.config/waybar/scripts/album_art.sh",
 		"size": 24,
 		"interval": 1
-	}
+	},
+
+	"custom/img": {
+        "format":"  ",
+        "tooltip": false
+    }
 }
