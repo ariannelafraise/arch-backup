@@ -15,5 +15,15 @@
     "mode": "system",
     "light": "One Dark",
     "dark": "One Dark"
+  },
+  "auto_install_extensions": {
+    "catpuccin-icons": true,
+    "discord-presence": true,
+    "git-firefly": true,
+    "html": true,
+    "csv": true,
+    "dockerfile": true,
+    "rainbow-csv": true,
+    "sql": true
   }
 }
