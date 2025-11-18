@@ -42,7 +42,7 @@ echo -e "${YELLOW}Backup files are stored in the '${script_dir}/backup' director
 
 echo -e "${PINK}${GITHUB_ICON} Pushing to GitHub...${RESET}\n"
 
-git -C $script_dir add .
+git -C $script_dir add -A
 git -C $script_dir commit -m "$(date +"%Y-%m-%d %H:%M:%S")"
 if [ $? -ne 0 ]; then
     echo -e "\n${RED}Error: Commit failed!${RESET}"
