@@ -21,7 +21,8 @@ rm -r $script_dir/backup
 mkdir -p $script_dir/backup/bash
 mkdir -p $script_dir/backup/.config
 mkdir -p $script_dir/backup/Wallpapers
-cp ~/.bashrc $script_dir/backup/bash/.bashrc
+cp ~/.bashrc $script_dir/backup/bash/
+cp ~/.zshrc $script_dir/backup/zsh/
 cp -r ~/.config/waybar $script_dir/backup/.config
 cp -r ~/.config/hypr $script_dir/backup/.config
 cp -r ~/.config/kitty $script_dir/backup/.config
@@ -33,6 +34,7 @@ cp -r ~/.config/fastfetch $script_dir/backup/.config
 cp -r ~/.config/spicetify $script_dir/backup/.config
 cp -r ~/.config/swaync $script_dir/backup/.config
 cp -r ~/.config/btop $script_dir/backup/.config
+cp -r ~/.oh-my-zsh $script_dir/backup/zsh
 cp -r ~/Wallpapers $script_dir/backup/
 
 echo -e "${GREEN}${DONE_ICON} Backup completed!${RESET}"

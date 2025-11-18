@@ -7,14 +7,22 @@
 window#waybar {
     background: linear-gradient(
         135deg,
-        rgba(255, 161, 225, 0.9) 0%,
-        rgba(255, 180, 230, 0.9) 25%,
-        rgba(255, 155, 218, 0.9) 50%,
-        rgba(255, 180, 230, 0.9) 75%,
-        rgba(255, 161, 225, 0.9) 100%
+        rgba(255, 161, 225, 0.8) 0%,
+        rgba(255, 180, 230, 0.8) 25%,
+        rgba(255, 155, 218, 0.8) 50%,
+        rgba(255, 180, 230, 0.8) 75%,
+        rgba(255, 161, 225, 0.8) 100%
     );
     color: #ffffff;
-    border-radius: 20px;
+    border-radius: 0px;
+}
+
+#custom-img {
+    background-image: url("/home/arianne/Pictures/shark_happy.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 20px;
 }
 
 tooltip {

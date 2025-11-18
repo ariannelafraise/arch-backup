@@ -5,6 +5,7 @@
 		"custom/notification",
 		"group/time",
 		"group/battery"
+		//"custom/img"
 	],
 
 	"modules-center": [
