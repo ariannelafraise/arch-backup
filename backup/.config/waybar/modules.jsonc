@@ -61,21 +61,21 @@
 	},
 
 	"custom/lock": {
-		"format": "<span color='#ffeea4'></span>",
+		"format": "<span color='#ffffff'></span>",
 		"tooltip-format": "Lock",
 		"on-click": "hyprlock"
 	},
 
 	"custom/restart": {
-		"format": "<span color='#acffa4'></span>",
+		"format": "<span color='#ffffff'></span>",
 		"tooltip-format": "Restart",
 		"on-click": "reboot"
 	},
 
 	"custom/shutdown": {
-		"format": "<span color='#ff7070'>⏻</span>",
+		"format": "<span color='#ffffff'>⏻</span>",
 		"tooltip-format": "Shutdown",
-		"on-click": "shutdown now"
+		"on-click": "poweroff"
 	},
 
 	"privacy": {
@@ -113,7 +113,7 @@
 	},
 
 	"custom/hrt": {
-		"format": "🩷 {}",
+		"format": "󱄿 {}",
 		"exec": "~/personal_dev/hrt-time/hrt-time.sh months",
 		"interval": 60,
 		"tooltip": false
