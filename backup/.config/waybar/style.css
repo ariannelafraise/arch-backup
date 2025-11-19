@@ -7,14 +7,15 @@
 window#waybar {
     background: linear-gradient(
         135deg,
-        rgba(255, 161, 225, 0.8) 0%,
-        rgba(255, 180, 230, 0.8) 25%,
-        rgba(255, 155, 218, 0.8) 50%,
-        rgba(255, 180, 230, 0.8) 75%,
-        rgba(255, 161, 225, 0.8) 100%
+        rgba(255, 99, 198, 0.5) 0%,
+        rgba(184, 78, 255, 0.5) 25%,
+        rgba(45, 174, 255, 0.5) 50%,
+        rgba(184, 78, 255, 0.5) 75%,
+        rgba(255, 99, 198, 0.5) 100%
     );
     color: #ffffff;
     border-radius: 0px;
+    box-shadow: 0 0 80px 40px rgb(255, 20, 145);
 }
 
 #custom-img {
