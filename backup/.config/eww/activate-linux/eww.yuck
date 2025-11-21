@@ -9,5 +9,5 @@
 (defwindow activate-linux
   :monitor 0
   :stacking "bg"
-  :geometry (geometry :x "8px" :y "32px" :width "250px" :anchor "bottom right")
+  :geometry (geometry :x "20px" :y "20px" :width "400px" :anchor "bottom left")
   (activate-linux))
