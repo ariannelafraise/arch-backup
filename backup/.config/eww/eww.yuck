@@ -1,13 +1,205 @@
-(defwidget activate-linux []
-  (box
-    :orientation "v"
-    :halign "start"
-    :valign "start"
-    (label :xalign 0 :markup "<span font_size=\"large\">Activate Linux</span>")
-    (label :xalign 0 :text "Go to Settings to activate Linux")))
+(defwindow topbar
+    :exclusive true
+    :monitor 0
+    :stacking "fg"
+    :wm-ignore true
+    :geometry (geometry :width "100%" :height "4.8%" :anchor "top center")
+    (main)
+)
 
-(defwindow activate-linux
-  :monitor 0
-  :stacking "bg"
-  :geometry (geometry :x "20px" :y "20px" :width "400px" :anchor "bottom left")
-  (activate-linux))
+(defpoll time :interval "5s"
+  :initial `date +'{"hour":"%H","min":"%M"}'`
+  `date +'{"hour":"%H","min":"%M"}'`)
+
+(defpoll hrt :interval "1s"
+    :initial "~/personal_dev/hrt-time/hrt-time.sh days_round"
+    "~/personal_dev/hrt-time/hrt-time.sh days_round"
+)
+
+(defwidget _buttons [shutdown shutdown_icon reboot reboot_icon logout logout_icon]
+    (box :class "btns-box" :spacing 5
+        :vexpand true :hexpand true
+        :valign "start" :halign "start"
+        :space-evenly false
+
+        (button :onclick shutdown shutdown_icon)
+        (button :onclick reboot reboot_icon)
+        (button :onclick logout logout_icon)
+    )
+)
+
+(defwidget _battery [battery status charge warning ten twenty thirty fourty fifty sixty seventy eighty ninety full]
+    (box :class "bat-box" :space-evenly false :spacing 8
+        (label :text
+            {
+                status == "Charging" ? charge :
+                battery < 10 ? warning :
+                battery < 20 ? ten :
+                battery < 30 ? twenty :
+                battery < 40 ? thirty :
+                battery < 50 ? fourty :
+                battery < 60 ? fifty :
+                battery < 70 ? sixty :
+                battery < 80 ? seventy :
+                battery < 90 ? eighty : 
+                battery < 100 ? ninety :
+                full
+            }
+        )
+    )
+)
+
+(defwidget _hrttime [hrt] 
+    (box :class "hrttimebox" :space-evenly false :spacing 8
+        (label :text {"🏳️‍⚧️" + " " + hrt})
+    )
+)
+
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
+(defwidget workspaces []
+    (box :class "workspaces-widget"
+        (box
+            (label :text "${workspaces}${current_workspace}" :visible false)
+            (for workspace in workspaces
+                (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+                    (box :class "${workspace.id == current_workspace ? "current" : "inactive"}" :width 30 :height 1)
+                )
+            )
+        )
+    )
+)
+
+(defpoll net_strength :interval "500ms"
+  :initial ""
+  `nmcli -t -f SIGNAL,ACTIVE device wifi | awk -F':' '{ if($2=="yes") print $1 }'`
+)
+(defpoll net_type :interval "500ms"
+    :initial ''
+    `nmcli -t -f state,type device status | awk -F ':' '{ if($1=="connected") print $2 }'`
+)
+(defpoll net_ssid :interval "500ms"
+    :initial ""
+    `nmcli -t -f active,ssid dev wifi | awk -F ':' '{if ($1=="yes") print $2}'`
+)
+(defwidget _network [type wifi_ssid strength ethernet offline wifi_excellent wifi_good wifi_okay wifi_slow]
+    (box :class "net-box"
+        :space-evenly false
+        :spacing 8
+        (eventbox :onclick "nm-connection-editor &"
+            (label :text
+                {
+                    type == "ethernet" ? ethernet :
+                    type == "" ? offline :
+                    type == "wifi" ? 
+                    strength < 26 ? wifi_slow + " " + wifi_ssid :
+                    strength < 51 ? wifi_okay + " " + wifi_ssid :
+                    strength < 76 ? wifi_good + " " + wifi_ssid : wifi_excellent + " " + wifi_ssid
+                    : offline
+                }
+            )
+        )
+    )
+)
+
+(defpoll bluetooth_connected_devices :interval "500ms"
+    :initial ""
+    `bluetoothctl devices | while read -r _ mac _; do bluetoothctl info "$mac" | grep -q "Connected: yes" && echo "$mac"; done | wc -l`
+)
+(defpoll bluetooth_status :interval "500ms"
+    :initial "inactive"
+    `systemctl is-active bluetooth`
+)
+(defwidget _bluetooth [connected_devices status]
+    (box :class "bluetooth-box"
+        :space-evenly false
+        :spacing 8
+        (eventbox :onclick "blueman-manager &"
+            (label :text
+                {
+                    status == "active" ?
+                    connected_devices > 0 ?
+                    "󰂱" + " " + connected_devices : "" 
+                    :
+                    "󰂯"
+                }
+            )
+        )
+    )
+)
+
+(defpoll sound_percentage :interval "50ms"
+    :initial ""
+    `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%.0f", $2 * 100}'`
+)
+(defpoll sound_muted :interval "50ms"
+    :initial ""
+    `wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo yes || echo no`
+)
+(defwidget _sound [sound_muted sound_percentage]
+    (box
+        :space-evenly false
+        :spacing 8
+        (eventbox :onclick "pavucontrol &"
+            (label :text
+                {
+                    sound_muted == "yes" ? "" + " " + sound_percentage
+                    : sound_percentage < 31 ? "" + " " + sound_percentage
+                    : sound_percentage < 61 ? "" + " " + sound_percentage
+                    : "" + " " + sound_percentage
+                }
+            )
+        )
+    )
+)
+
+(defwidget main []
+    (centerbox :class "layout-box" :space-evenly false :orientation "horizontal"
+        (box :halign "start" :hexpand true :space-evenly false :spacing 10
+            (_battery 
+                :status {EWW_BATTERY.BAT1.status}
+                :battery {EWW_BATTERY.BAT1.capacity}
+                :charge {"" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :warning {"󱃍" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :ten {"󰁺" + " " + EWW_BATTERY.BAT1.capacity + "%" }
+                :twenty {"󰁻" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :thirty {"󰁼" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :fourty {"󰁽" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :fifty {"󰁾" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :sixty {"󰁿" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :seventy {"󰂀" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :eighty {"󰂁" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :ninety {"󰂂" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+                :full {"󰁹" + " " + EWW_BATTERY.BAT1.capacity + "%" } 
+            )
+            ( _hrttime
+                :hrt hrt
+            )
+        )
+        (box :halign "center" :space-evenly false :spacing 10
+            (workspaces)
+        )
+        (box :halign "end" :hexpand true :space-evenly false :spacing 10
+            (_network
+                :type {net_type}
+                :wifi_ssid {net_ssid}
+                :strength {net_strength}
+                :ethernet ""
+                :offline ""
+                :wifi_excellent ""
+                :wifi_good ""
+                :wifi_okay ""
+                :wifi_slow ""
+            )
+            (_bluetooth
+                :connected_devices {bluetooth_connected_devices}
+                :status {bluetooth_status}
+            )
+            (_sound
+                :sound_muted {sound_muted}
+                :sound_percentage {sound_percentage}
+            )
+            (systray :class "systray" :pack-direction "ltr")
+        )
+    )
+)
