@@ -61,6 +61,9 @@ alias nas-pdc-umount='sudo umount /nas/pdc'
 alias nas-arianne-mount='sudo mount -t cifs -o credentials=/etc/samba/credentials,uid=1000,gid=1000,x-systemd.automount,_netdev //nas-arianne.pdc.ovh/Arianne /nas/arianne'
 alias nas-arianne-umount='sudo umount /nas/arianne'
 
+# SSH aliases
+alias rpi-connect='ssh arianne@192.168.240.90'
+
 # SSH
 #eval $(ssh-agent) &> /dev/null
 #ssh-add ~/ssh_keys/github &> /dev/null
