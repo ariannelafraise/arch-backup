@@ -79,6 +79,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 
 # Discord Cosmetics Automation Script
 export PATH=$PATH:~/personal_dev/discord-cosmetics-automation
+export PATH=$PATH:/opt/nitch
 
 # pnpm
 export PNPM_HOME="/home/arianne/.local/share/pnpm"
