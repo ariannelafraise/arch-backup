@@ -3,7 +3,7 @@
     :orientation "v"
     :halign "start"
     :valign "start"
-    (label :xalign 0 :markup "<span font_size=\"large\">Activate Linux</span>")
+    (label :xalign 0 :markup "<span font_size=\"large\">Activate October Linux</span>")
     (label :xalign 0 :text "Go to Settings to activate Linux")))
 
 (defwindow activate-linux
