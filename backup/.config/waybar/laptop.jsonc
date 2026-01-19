@@ -1,8 +1,7 @@
 {
     "modules-left": [
 		"group/power",
-		"custom/swaync",
-		"custom/notification",
+		//"custom/notification",
 		"group/time",
 		"group/battery"
 		//"custom/img"
