@@ -38,7 +38,6 @@ alias apply-config='~/personal_dev/arch-backup/arch_apply.sh'
 ## Modified default commands aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias wireshark='XDG_CURRENT_DESKTOP=GNOME wireshark'
 
 ## Fun aliases
 alias macfetch='hyfetch --distro macaroni'
