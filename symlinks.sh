@@ -1,18 +1,16 @@
 #!/bin/bash
-
-ln -sf ~/dotfiles/config/btop ~/.config/btop
-ln -sf ~/dotfiles/config/dunst ~/.config/dunst
-ln -sf ~/dotfiles/config/eww ~/.config/eww
-ln -sf ~/dotfiles/config/fastfetch ~/.config/fastfetch
-ln -sf ~/dotfiles/config/hypr ~/.config/hypr
-ln -sf ~/dotfiles/config/kitty ~/.config/kitty
-ln -sf ~/dotfiles/config/oh-my-posh ~/.config/oh-my-posh
-ln -sf ~/dotfiles/config/spicetify ~/.config/spicetify
-ln -sf ~/dotfiles/config/swaync ~/.config/swaync
-ln -sf ~/dotfiles/config/waybar ~/.config/waybar
-ln -sf ~/dotfiles/config/wofi ~/.config/wofi
-ln -sf ~/dotfiles/config/zed ~/.config/zed
-
-ln -sf ~/dotfiles/config/bash/.bashrc ~/.bashrc
-ln -sf ~/dotfiles/config/zsh/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/config/Wallpapers ~/Wallpapers
+ln -sf "$HOME/dotfiles/config/btop" "$HOME/.config/btop"
+ln -sf "$HOME/dotfiles/config/dunst" "$HOME/.config/dunst"
+ln -sf "$HOME/dotfiles/config/eww" "$HOME/.config/eww"
+ln -sf "$HOME/dotfiles/config/fastfetch" "$HOME/.config/fastfetch"
+ln -sf "$HOME/dotfiles/config/hypr" "$HOME/.config/hypr"
+ln -sf "$HOME/dotfiles/config/kitty" "$HOME/.config/kitty"
+ln -sf "$HOME/dotfiles/config/oh-my-posh" "$HOME/.config/oh-my-posh"
+ln -sf "$HOME/dotfiles/config/spicetify" "$HOME/.config/spicetify"
+ln -sf "$HOME/dotfiles/config/swaync" "$HOME/.config/swaync"
+ln -sf "$HOME/dotfiles/config/waybar" "$HOME/.config/waybar"
+ln -sf "$HOME/dotfiles/config/wofi" "$HOME/.config/wofi"
+ln -sf "$HOME/dotfiles/config/zed" "$HOME/.config/zed"
+ln -sf "$HOME/dotfiles/config/bash/.bashrc" "$HOME/.bashrc"
+ln -sf "$HOME/dotfiles/config/zsh/.zshrc" "$HOME/.zshrc"
+ln -sf "$HOME/dotfiles/config/wallpapers" "$HOME/wallpapers"

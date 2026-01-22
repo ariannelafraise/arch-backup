@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script_dir=~/dotfiles
+script_dir="${HOME}/dotfiles"
 
 # Pastel colors
 GREEN="\e[38;5;150m"  # Light pastel green
@@ -23,8 +23,7 @@ if [ $? -ne 0 ]; then
     echo -e "\n${RED}Error: Commit failed!${RESET}"
     exit 1
 fi
-git -C ~/dotfiles push -u origin main
-
+git -C "${script_dir}" push -u origin main
 if [ $? -ne 0 ]; then
     echo -e "\n${RED}Error: Push failed!${RESET}"
     exit 1

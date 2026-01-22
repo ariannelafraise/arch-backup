@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script_dir=~/dotfiles
+script_dir="${HOME}/dotfiles"
 
 # Pastel colors
 GREEN="\e[38;5;150m"  # Light pastel green
