@@ -1,1 +1,1 @@
-Backup of my Arch Linux configuration files!
+# My dotfiles and configuration scripts

@@ -1,4 +1,6 @@
-script_dir=~/personal_dev/arch-backup
+#!/bin/bash
+
+script_dir=~/dotfiles
 
 # Pastel colors
 GREEN="\e[38;5;150m"  # Light pastel green
@@ -30,28 +32,21 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# apply config
-rm -r ~/Wallpapers
-cp -r $script_dir/backup/Wallpapers ~/
-cp -r $script_dir/backup/.config ~/
-cp -r $script_dir/backup/zsh/. ~/
-cp $script_dir/backup/bash/.bashrc ~/
-
+echo -e "${PINK}${GITHUB_ICON} Applying ${DEVICE} specific configuration...${RESET}\n"
 # waybar device specific
 case $DEVICE in
     "desktop")
-        sed -i -e 's/laptop/desktop/g' ~/.config/waybar/device-specific.jsonc 
+        sed -i -e 's/laptop/desktop/g' ${script_dir}/config/waybar/device-specific.jsonc
         ;;
     "laptop")
-        sed -i -e 's/desktop/laptop/g' ~/.config/waybar/device-specific.jsonc 
+        sed -i -e 's/desktop/laptop/g' ${script_dir}/config/waybar/device-specific.jsonc
         ;;
 esac
-
 # hyprland device specific
-echo -n "" > ~/.config/hypr/device-specific.conf
-echo "source = ~/.config/hypr/${DEVICE}/monitors.conf" >> ~/.config/hypr/device-specific.conf
-echo "source = ~/.config/hypr/${DEVICE}/programs.conf" >> ~/.config/hypr/device-specific.conf
-echo "source = ~/.config/hypr/${DEVICE}/autostart.conf" >> ~/.config/hypr/device-specific.conf
-echo "source = ~/.config/hypr/${DEVICE}/bindings.conf" >> ~/.config/hypr/device-specific.conf
+echo -n "" > ${script_dir}/config/hypr/device-specific.conf
+echo "source = ${script_dir}/config/hypr/${DEVICE}/monitors.conf" >> ${script_dir}/config/hypr/device-specific.conf
+echo "source = ${script_dir}/config/hypr/${DEVICE}/programs.conf" >> ${script_dir}/config/hypr/device-specific.conf
+echo "source = ${script_dir}/config/hypr/${DEVICE}/autostart.conf" >> ${script_dir}/config/hypr/device-specific.conf
+echo "source = ${script_dir}/config/hypr/${DEVICE}/bindings.conf" >> ${script_dir}/config/hypr/device-specific.conf
 
 echo -e "\n${GREEN}${DONE_ICON} Configuration applied!${RESET}"
