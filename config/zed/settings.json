@@ -26,9 +26,9 @@
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Nightfox - blurred",
-    "dark": "One Dark"
+    "dark": "Nightfox - opaque"
   },
   "auto_install_extensions": {
     "catpuccin-icons": true,
