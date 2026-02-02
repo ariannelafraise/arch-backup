@@ -6,12 +6,11 @@
 
 window#waybar {
     color: #ffffff;
-    border-radius: 0px;
     background: transparent;
 }
 
 #waybar > box {
-    margin: 10px;
+    margin: 5px;
     /*background: linear-gradient(
         135deg,
         rgba(255, 161, 225, 0.8) 0%,
@@ -23,29 +22,21 @@ window#waybar {
     box-shadow: 0px -2px 6px 0.5px rgba(0, 0, 0, 0.2);*/
 }
 
-#custom-img {
-    background-image: url("/home/arianne/Pictures/shark_happy.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    font-size: 20px;
-}
-
 tooltip {
     background-color: rgba(0, 0, 0, 0.2);
     border: none;
 }
 
 .modules-right {
-    margin-right: 10px;
+    margin-right: 0px;
 }
 
 .modules-left {
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 .drawer-child * {
-    margin-left: 20px;
+    margin-left: 1em;
 }
 
 /*
@@ -59,16 +50,15 @@ tooltip {
 .modules-center > * > *,
 .modules-right > * > * {
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    padding: 0px 25px 0px 25px;
-    border-radius: 20px;
+    padding: 0px 20px 0px 20px;
+    border-radius: 13px;
     transition: background-color 500ms;
 }
 
 .modules-left > * > *:hover,
 .modules-center > * > *:hover,
 .modules-right > * > *:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     transition: background-color 500ms;
 }
 
@@ -78,8 +68,7 @@ tooltip {
 }
 
 #workspaces button {
-    padding: 5px 15px;
-    padding-right: 15px;
+    padding: 5px 10px 5px 10px;
     background: none;
     border-radius: 20px;
     border: none;
@@ -89,8 +78,14 @@ tooltip {
     transition: background-color 250ms;
 }
 
+#workspaces:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 #workspaces button:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
     transition: background-color 250ms;
 }
 

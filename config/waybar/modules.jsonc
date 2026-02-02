@@ -3,30 +3,10 @@
     "format-icons": {
       "default": "<span color='#ffffff' alpha='100%'>♥</span>",
       "special": "<span color='#ffffff' alpha='100%'></span>",
-      "active": "<span color='#ffffff' alpha='100%'></span>", //  󰊠  󰢚 󰭟 󰄛 󰋑
+      "active": "<span color='#ffaacc' alpha='100%'></span>", //  󰊠  󰢚 󰭟 󰄛 󰋑
     },
-    "format": "{icon}<span color='#ffffff' size='100%' alpha='50%'>{windows}</span>",
-    "format-window-separator": "",
-    "window-rewrite-default": " ",
-    "window-rewrite": {
-      "zen": "  󰖟",
-      "brave-browser": "  󰖟",
-      "class<zen> title<.*github.*>": "  ",
-      "kitty": "  ",
-      "code": "  󰨞",
-      "jetbrains-pycharm": "  ",
-      "jetbrains-idea": "  ",
-      "obsidian": "  󰠮",
-      "spotify": "  ",
-      "vesktop": "  ",
-      "firefox": "  󰈹",
-      "steam": "  󰓓",
-      "class<org.wireshark.Wireshark>": "  󱙳",
-    },
-    "persistent-workspaces": {
-      "*": 5,
-    },
-    "show-special": true,
+    "format": "{icon} {name}",
+    "show-special": false,
   },
 
   "bluetooth": {
@@ -37,27 +17,6 @@
     "tooltip-format-enumerate-connected": " {device_alias} 󰁹 {device_battery_percentage}%",
     "tooltip": true,
     "on-click": "blueman-manager",
-  },
-
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{icon} {text}",
-    "format-icons": {
-      "notification": "󰂚",
-      "none": "󰂚",
-      "dnd-notification": "󰂛",
-      "dnd-none": "󰂛",
-      "inhibited-notification": "󰂚",
-      "inhibited-none": "󰂚",
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰂛",
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true,
   },
 
   "custom/lock": {
@@ -78,40 +37,6 @@
     "on-click": "poweroff",
   },
 
-  "privacy": {
-    "icon-spacing": 10,
-    "icon-size": 18,
-    "transition-duration": 250,
-    "modules": [
-      {
-        "type": "screenshare",
-        "tooltip": true,
-        "tooltip-icon-size": 24,
-      },
-      {
-        "type": "audio-out",
-        "tooltip": true,
-        "tooltip-icon-size": 24,
-      },
-      {
-        "type": "audio-in",
-        "tooltip": true,
-        "tooltip-icon-size": 24,
-      },
-    ],
-    "ignore-monitor": true,
-    "ignore": [
-      {
-        "type": "audio-in",
-        "name": "cava",
-      },
-      {
-        "type": "screenshare",
-        "name": "obs",
-      },
-    ],
-  },
-
   "custom/hrt": {
     "format": "󱄿 {}",
     "exec": "~/personal_dev/hrt-time/hrt-time.sh months",
@@ -119,18 +44,8 @@
     "tooltip": false,
   },
 
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}",
-    "format-icons": {
-      "performance": "",
-      "balanced": "",
-      "power-saver": "",
-    },
-  },
-
   "clock": {
-    "format": " {:%H:%M}",
+    "format": "{:%H:%M}",
     "rotate": 0,
     "format-alt": "󰃭 {:%d/%m/%Y}",
     "tooltip-format": "<tt>{calendar}</tt>",
@@ -143,11 +58,6 @@
         "today": "<span color='#f458fc'><b>{}</b></span>",
       },
     },
-  },
-
-  "tray": {
-    "icon-size": 20,
-    "spacing": 5,
   },
 
   "battery": {
@@ -165,7 +75,7 @@
 
   "network": {
     "format-wifi": " {essid} ({signalStrength}%)",
-    "format-ethernet": " connected",
+    "format-ethernet": "",
     "tooltip-format": "󱂇 {ipaddr}/{cidr} via {gwaddr}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": " disconnected",
@@ -179,32 +89,5 @@
     "format-muted": " {volume}%",
     "on-click": "pavucontrol",
     "format-icons": ["󰕿", "󰖀", "󰕾"],
-  },
-
-  "cpu": {
-    "format": " {usage}%",
-    "tooltip": false,
-    "interval": 5,
-  },
-
-  "custom/spotify": {
-    "format": "{} ",
-    "exec": "~/.config/waybar/scripts/spotify.sh",
-    "interval": 1,
-    "on-click": "playerctl -p spotify play-pause",
-    "on-scroll-up": "playerctl -p spotify next",
-    "on-scroll-down": "playerctl -p spotify previous",
-    "exec-if": "pgrep spotify",
-  },
-
-  "image#spotify-album": {
-    "exec": "~/.config/waybar/scripts/album_art.sh",
-    "size": 24,
-    "interval": 1,
-  },
-
-  "custom/img": {
-    "format": "  ",
-    "tooltip": false,
   },
 }

@@ -6,11 +6,46 @@
   "margin-right": 0,
   "margin-top": 0,
   "margin-bottom": 0,
-  "position": "bottom",
+  "position": "top",
 
-  "include": [
-    "~/.config/waybar/modules.jsonc",
-    "~/.config/waybar/device-specific.jsonc",
-  ],
+  "include": ["~/.config/waybar/modules.jsonc"],
   "style": "./style.css",
+
+  "modules-left": ["group/power", "group/time", "battery"],
+
+  "modules-center": ["hyprland/workspaces"],
+
+  "modules-right": ["group/connectivity", "group/sound"],
+
+  "group/connectivity": {
+    "orientation": "horizontal",
+    "modules": ["network", "bluetooth"],
+    "drawer": {
+      "children-class": "drawer-child",
+    },
+  },
+
+  "group/sound": {
+    "orientation": "horizontal",
+    "modules": ["wireplumber", "privacy"],
+    "drawer": {
+      "children-class": "drawer-child",
+    },
+  },
+
+  "group/time": {
+    "orientation": "horizontal",
+    "modules": ["clock", "custom/hrt"],
+    "drawer": {
+      "children-class": "drawer-child",
+    },
+  },
+
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": ["custom/lock", "custom/restart", "custom/shutdown"],
+    "drawer": {
+      "children-class": "drawer-child",
+    },
+  },
 }

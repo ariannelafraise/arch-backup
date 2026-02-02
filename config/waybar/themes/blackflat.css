@@ -11,7 +11,6 @@ window#waybar {
 }
 
 #waybar > box {
-    margin-top: 10px;
     background: linear-gradient(
         135deg,
         rgba(25, 25, 28, 0.92) 0%,
@@ -21,14 +20,6 @@ window#waybar {
         rgba(25, 25, 28, 0.92) 100%
     );
     box-shadow: 0px -2px 6px 0.5px rgba(0, 0, 0, 0.2);
-}
-
-#custom-img {
-    background-image: url("/home/arianne/Pictures/shark_happy.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    font-size: 20px;
 }
 
 tooltip {
@@ -60,7 +51,7 @@ tooltip {
 .modules-right > * > * {
     /* background-color: rgba(0, 0, 0, 0.4); */
     border-radius: 20px;
-    padding: 0px 25px 0px 25px;
+    padding: 0px 15px 0px 15px;
     border-radius: 20px;
     transition: background-color 500ms;
 }
