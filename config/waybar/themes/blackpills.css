@@ -104,12 +104,12 @@ tooltip {
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: rgba(252, 106, 106, 0);
-    animation-name: blink-red-fg;
+    color: rgb(255, 100, 100);
+    /*animation-name: blink-red-fg;
     animation-duration: 0.5s;
     animation-timing-function: steps(25);
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: alternate;*/
 }
 
 #battery.warning:not(.charging) {
