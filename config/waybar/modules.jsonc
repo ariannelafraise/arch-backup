@@ -91,4 +91,9 @@
     "on-click": "pavucontrol",
     "format-icons": ["󰕿", "󰖀", "󰕾"],
   },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 5,
+  },
 }

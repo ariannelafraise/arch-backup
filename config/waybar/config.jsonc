@@ -15,7 +15,7 @@
 
   "modules-center": ["hyprland/workspaces"],
 
-  "modules-right": ["group/connectivity", "group/sound"],
+  "modules-right": ["group/connectivity", "group/sound", "tray"],
 
   "group/connectivity": {
     "orientation": "horizontal",
