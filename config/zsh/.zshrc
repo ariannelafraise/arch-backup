@@ -16,7 +16,7 @@ compinit
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="suvash"
+ZSH_THEME="alanpeabody"
 
 # autoupdate oh-my-zsh
 zstyle ':omz:update' mode auto      # update automatically without asking
@@ -68,9 +68,9 @@ alias rpi-connect='ssh arianne@192.168.240.90'
 #ssh-add ~/ssh_keys/github &> /dev/null
 SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
-if [[ "$TERM" = "xterm-kitty" ]]; then
-  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/catppuccin_frappe.omp.json)"
-fi
+#if [[ "$TERM" = "xterm-kitty" ]]; then
+#  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/tokyo.omp.json)"
+#fi
 
 # Java Oracle
 export JAVA_HOME=$HOME/java/jdk1.8.0_451
