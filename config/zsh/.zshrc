@@ -69,7 +69,7 @@ alias rpi-connect='ssh arianne@192.168.240.90'
 SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 if [[ "$TERM" = "xterm-kitty" ]]; then
-  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/trans.omp.json)"
+  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/catppuccin_frappe.omp.json)"
 fi
 
 # Java Oracle
