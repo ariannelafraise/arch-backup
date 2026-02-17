@@ -1,51 +1,67 @@
-window {
-margin: 0px;
-border: 1px solid #bd93f9;
-background-color: #282a36;
+@import url("gtk-template.css");
+
+#window {
+    font-family: "Ubuntu Mono Nerd Font Propo";
+    margin: 0px;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#input ::placeholder {
+    color: @color0;
 }
 
 #input {
-margin: 5px;
-border: none;
-color: #f8f8f2;
-background-color: #44475a;
+    margin: 5px;
+    border: none;
+    color: @color0;
+    background-color: @color0_tp;
+    outline-width: 0;
+}
+
+#input:focus {
+    background-color: @color6_tp;
+}
+
+#window #outer-box #scroll #inner-box #entry:selected {
+    background-color: @color6_tp;
+    border-radius: 0.3rem;
+    outline: none;
 }
 
 #inner-box {
-margin: 5px;
-border: none;
-background-color: #282a36;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #color0_tp;
 }
 
 #outer-box {
-margin: 5px;
-border: none;
-background-color: #282a36;
+    margin: 5px;
+    padding: 0.5em 0.5em 1em 0.5em;
+    border-radius: 10px;
+    background-color: @background_tp;
 }
 
 #scroll {
-margin: 0px;
-border: none;
+    margin: 0px;
+    border: none;
 }
 
 #text {
-margin: 5px;
-border: none;
-color: #f8f8f2;
-} 
+    margin: 5px;
+    border: none;
+    color: @foreground;
+}
 
 #entry.activatable #text {
-color: #282a36;
-}
-
-#entry > * {
-color: #f8f8f2;
-}
-
-#entry:selected {
-background-color: #44475a;
+    color: #282a36;
 }
 
 #entry:selected #text {
-font-weight: bold;
+    font-weight: bold;
+    color: @color0;
+}
+
+#entry #text {
+    color: @foreground;
 }
