@@ -8,18 +8,18 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "subtle",
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "copilot",
   },
   "agent": {
     "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5-mini"
+      "model": "gpt-5-mini",
     },
-    "model_parameters": []
+    "model_parameters": [],
   },
   "disable_ai": false,
   "icon_theme": "Catppuccin Frappé",
@@ -28,16 +28,16 @@
   "theme": {
     "mode": "dark",
     "light": "Nightfox - blurred",
-    "dark": "Nightfox - opaque"
+    "dark": "Nightfox - opaque",
   },
   "auto_install_extensions": {
     "catpuccin-icons": true,
-    "discord-presence": true,
+    "discord-presence": false,
     "git-firefly": true,
     "html": true,
     "csv": true,
     "dockerfile": true,
     "rainbow-csv": true,
-    "sql": true
-  }
+    "sql": true,
+  },
 }
