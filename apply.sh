@@ -22,6 +22,4 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo -e "${PINK}${GITHUB_ICON} Applying ${DEVICE} specific configuration...${RESET}\n"
-
 echo -e "\n${GREEN}${DONE_ICON} Configuration applied!${RESET}"
