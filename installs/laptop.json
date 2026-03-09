@@ -1,0 +1,82 @@
+{
+  "drives": [
+    {
+      "path": "/dev/nvme0n1",
+      "append": true,
+      "partitions": [
+        {
+          "size": {
+            "amount": 1,
+            "unit": "GiB"
+          },
+          "partitionType": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B"
+        },
+        {
+          "size": {
+            "amount": 8,
+            "unit": "GiB"
+          },
+          "partitionType": "0657FD6D-A4AB-43C4-84E5-0933C84B4F4F"
+        },
+        {
+          "size": {
+            "takeRemaining": true
+          },
+          "partitionType": "4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709",
+          "fileSystem": "ext4",
+          "mountPoint": "/mnt"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "arianne",
+      "password": "censored",
+      "sudoer": true
+    }
+  ],
+  "mirrorCountries": ["Canada", "United States"],
+  "timezone": "America/Montreal",
+  "locale": "US.UTF-8",
+  "hostname": "kitaria",
+  "rootPassword": "censored",
+  "bestEffortGPU": true,
+  "extraPackages": {
+    "officialRepositories": [
+      "archiso",
+      "alsa-utils",
+      "archlinux-xdg-menu",
+      "bc",
+      "brightnessctl",
+      "btop",
+      "fastfetch",
+      "go",
+      "hyprsunset",
+      "obsidian",
+      "progress",
+      "python-termcolor",
+      "reflector",
+      "tlp",
+      "tlpui",
+      "zip",
+      "unzip",
+      "zathura",
+      "zathura-pdf-mupdf",
+      "zed",
+      "zsh",
+      "code"
+    ],
+    "aur": [
+      "bitwarden-bin",
+      "discord-ptb",
+      "go-chroma-bin",
+      "huenicorn",
+      "oh-my-posh-bin",
+      "onefetch",
+      "spotify",
+      "vesktop-bin",
+      "wireguard-tools"
+    ]
+  }
+}
