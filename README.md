@@ -1,8 +1,8 @@
-# My dotfiles and configuration scripts
+# My dotfiles and configuration scripts for Arch Linux
 
 ## Installation
 > [!WARNING]
-> Will override the directories in ~/.config with symlinks
+> Will override configuration directories with symlinks
 
 ### HTTPS
 `curl -sL https://raw.githubusercontent.com/ariannelafraise/dotfiles/refs/heads/main/setup-https.sh | bash`
